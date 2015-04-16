@@ -182,8 +182,19 @@ schemas:
   - listVirtualInterfaces: !include /schemas/listVirtualInterfaces-schema.json
   - notImplemented: !include schemas/notImplemented-schema.xsd
   - listExtensionsResXML: !include schemas/listExtensionsResXML-schema.xsd
+  - extensionDetailsXML: !include schemas/extensionDetailsXML-schema.xsd
+  - badRequest: !include schemas/badRequest-schema.xsd
+  - unauthorized: !include schemas/unauthorized-schema.xsd
+  - forbidden: !include schemas/forbidden-schema.xsd
+  - badMethod: !include schemas/badMethod-schema.xsd
+  - overLimit: !include schemas/overLimit-schema.xsd
+  - unprocessableEntity: !include schemas/unprocessableEntity-schema.xsd
+  - instanceFault: !include schemas/instanceFault-schema.xsd
+  - serviceUnavailable: !include schemas/serviceUnavailable-schema.xsd
+  - itemNotFound: !include schemas/itemNotFound-schema.xsd
 resourceTypes:
   - extension: !include resourceTypes/extension.raml
+  - flavorsList: !include resourceTypes/flavorsList.raml
   - extensions: !include resourceTypes/extensions.raml
 /: 
   get: 
@@ -211,6 +222,7 @@ resourceTypes:
     /{alias}: 
       type: extension
   /flavors: 
+    type: flavorsList
     post: 
       description: Create flavor
       body: 
@@ -223,16 +235,6 @@ resourceTypes:
             application/json: 
               schema: flavorRxtxPostResp
               example: !include examples/flavorRxtxPostResp-example.json
-    get: 
-      description: List flavors
-      body: 
-        application/json: 
-          schema: flavorsListResp
-          example: !include examples/flavorsListResp-example.json
-      responses: 
-        200: 
-          headers: 
-            X-OpenStack-Request-ID: 
     /1: 
       get: 
         description: Add access attribute to flavor show

@@ -1,0 +1,11 @@
+get: 
+  description: Get extension details
+  responses: 
+    200: 
+      body: 
+        application/xml: 
+          schema: extensionDetailsXML
+          example: !include examples/extensionDetailsXML-example.xml
+        application/json: 
+          schema: extensionDetails
+          example: !include examples/extensionDetails-example.json
