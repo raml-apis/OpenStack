@@ -42,15 +42,11 @@ schemas:
   - sanapshotStackReq: !include /schemas/sanapshotStackReq-schema.json
   - snapshotStackRes: !include /schemas/snapshotStackRes-schema.json
   - listSnapshots: !include /schemas/listSnapshots-schema.json
+  - neutronVersionsResponse: !include schemas/neutronVersionsResponse-schema.xsd
+resourceTypes:
+  - apiVersions: !include resourceTypes/apiVersions.raml
 /: 
-  get: 
-    description: List versions
-    responses: 
-      200: 
-        body: 
-          application/json: 
-            schema: heatVersionsResponse
-            example: !include examples/heatVersionsResponse-example.json
+  type: apiVersions
 /{version}: 
   /{tenant_id}: 
     /build_info: 

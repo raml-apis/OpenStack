@@ -46,6 +46,8 @@ schemas:
   - showClusterTemplate: !include /schemas/showClusterTemplate-schema.json
   - updateClasterTemplateRequest: !include /schemas/updateClasterTemplateRequest-schema.json
   - updateClasterTemplateResponse: !include /schemas/updateClasterTemplateResponse-schema.json
+resourceTypes:
+  - jobBinary: !include resourceTypes/jobBinary.raml
 /{version}: 
   /{tenant_id}: 
     /cluster-templates: 
@@ -223,15 +225,7 @@ schemas:
           responses: 
             204: 
         /data: 
-          get: 
-            description: Get job binary data
-            responses: 
-              200: 
-                body: 
-                  "": 
-                    schema: ""
-                headers: 
-                  Content-Length: 
+          type: jobBinary
     /job-executions: 
       get: 
         description: List job executions
@@ -295,15 +289,7 @@ schemas:
           responses: 
             204: 
         /data: 
-          get: 
-            description: Get job binary internal data
-            responses: 
-              200: 
-                body: 
-                  "": 
-                    schema: ""
-                headers: 
-                  Content-Length: 
+          type: jobBinary
       /{name}: 
         put: 
           description: Create job binary internal

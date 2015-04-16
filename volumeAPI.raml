@@ -107,17 +107,25 @@ schemas:
   - updateQuotaReqXML: !include /schemas/updateQuotaReqXML-schema.xsd
   - updateQuota: !include /schemas/updateQuota-schema.json
   - updateQuotaXml: !include /schemas/updateQuotaXml-schema.xsd
+  - badRequest: !include schemas/badRequest-schema.xsd
+  - unauthorized: !include schemas/unauthorized-schema.xsd
+  - forbidden: !include schemas/forbidden-schema.xsd
+  - badMethod: !include schemas/badMethod-schema.xsd
+  - overLimit: !include schemas/overLimit-schema.xsd
+  - unprocessableEntity: !include schemas/unprocessableEntity-schema.xsd
+  - instanceFault: !include schemas/instanceFault-schema.xsd
+  - notImplemented: !include schemas/notImplemented-schema.xsd
+  - serviceUnavailable: !include schemas/serviceUnavailable-schema.xsd
+  - itemNotFound: !include schemas/itemNotFound-schema.xsd
+  - listExtensionsResXML: !include schemas/listExtensionsResXML-schema.xsd
+resourceTypes:
+  - extension: !include resourceTypes/extension.raml
+  - extensions: !include resourceTypes/extensions.raml
+  - updatedVersions: !include resourceTypes/updatedVersions.raml
 traits:
   - delimeter: !include traits/delimeter.raml
 /: 
-  get: 
-    description: List API versions
-    responses: 
-      200: 
-        body: 
-          application/json: 
-            schema: cinderVersionsResponse
-            example: !include examples/cinderVersionsResponse-example.json
+  type: updatedVersions
 /{version}: 
   get: 
     description: Show API version details
@@ -185,18 +193,9 @@ traits:
                     schema: backupRestoreResponse
                     example: !include examples/backupRestoreResponse-example.json
     /extensions: 
-      get: 
-        description: List API extensions
-        responses: 
-          200: 
-            body: 
-              application/xml: 
-                schema: cinderExtensionsResponseXSD
-                example: !include examples/cinderExtensionsResponse-example.xml
-              application/json: 
-                schema: cinderExtensionsResponse
-                example: !include examples/cinderExtensionsResponse-example.json
+      type: extensions
       /{alias}: 
+        type: extension
     /limits: 
       get: 
         description: Show absolute limits

@@ -180,7 +180,12 @@ schemas:
   - getServerPassword: !include /schemas/getServerPassword-schema.json
   - listVirtualInterfacesXML: !include /schemas/listVirtualInterfacesXML-schema.xsd
   - listVirtualInterfaces: !include /schemas/listVirtualInterfaces-schema.json
-/clear_me: 
+  - notImplemented: !include schemas/notImplemented-schema.xsd
+  - listExtensionsResXML: !include schemas/listExtensionsResXML-schema.xsd
+resourceTypes:
+  - extension: !include resourceTypes/extension.raml
+  - extensions: !include resourceTypes/extensions.raml
+/: 
   get: 
     description: List API versions
     responses: 
@@ -202,23 +207,9 @@ schemas:
             schema: computeVersionResponse
             example: !include examples/computeVersionResponse-example.json
   /extensions: 
-    get: 
-      description: List extensions
-      responses: 
-        "200 203": 
-          body: 
-            application/json: 
-              schema: extensionsv2.1GetResp
-              example: !include examples/extensionsv2.1GetResp-example.json
+    type: extensions
     /{alias}: 
-      get: 
-        description: Get extension
-        responses: 
-          "200 203": 
-            body: 
-              application/json: 
-                schema: extensionv2.1
-                example: !include examples/extensionv2.1-example.json
+      type: extension
   /flavors: 
     post: 
       description: Create flavor

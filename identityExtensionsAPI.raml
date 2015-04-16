@@ -34,6 +34,15 @@ schemas:
   - consumersPostReq: !include schemas/consumersPostReq-schema.json
   - consumersPostResp: !include schemas/consumersPostResp-schema.json
   - requestTokenPostResp: !include schemas/requestTokenPostResp-schema.json
+  - badRequest: !include schemas/badRequest-schema.xsd
+  - unauthorized: !include schemas/unauthorized-schema.xsd
+  - forbidden: !include schemas/forbidden-schema.xsd
+  - badMethod: !include schemas/badMethod-schema.xsd
+  - overLimit: !include schemas/overLimit-schema.xsd
+  - serviceUnavailable: !include schemas/serviceUnavailable-schema.xsd
+  - itemNotFound: !include schemas/itemNotFound-schema.xsd
+resourceTypes:
+  - authenticate: !include resourceTypes/authenticate.raml
 /{version}: 
   /OS-OAUTH1: 
     /access_token: 
@@ -501,55 +510,4 @@ schemas:
                           schema: ""
   /auth: 
     /tokens: 
-      post: 
-        description: Get an Identity Service token
-        body: 
-          application/json: 
-            schema: ""
-        responses: 
-          200: 
-            body: 
-              application/json: 
-                schema: ""
-          400: 
-            body: 
-              application/xml: 
-                schema: badRequest
-              application/json: 
-                schema: ""
-          401: 
-            body: 
-              application/xml: 
-                schema: unauthorized
-              application/json: 
-                schema: ""
-          403: 
-            body: 
-              application/xml: 
-                schema: forbidden
-              application/json: 
-                schema: ""
-          405: 
-            body: 
-              application/xml: 
-                schema: badMethod
-              application/json: 
-                schema: ""
-          413: 
-            body: 
-              application/xml: 
-                schema: overLimit
-              application/json: 
-                schema: ""
-          503: 
-            body: 
-              application/xml: 
-                schema: serviceUnavailable
-              application/json: 
-                schema: ""
-          404: 
-            body: 
-              application/xml: 
-                schema: itemNotFound
-              application/json: 
-                schema: ""
+      type: authenticate

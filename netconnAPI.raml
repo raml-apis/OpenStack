@@ -218,18 +218,12 @@ schemas:
   - updateSinglePool: !include /schemas/updateSinglePool-schema.json
   - associateHealthMonitorWithPoolReq: !include /schemas/associateHealthMonitorWithPoolReq-schema.json
   - associateHealthMonitorWithPoolRes: !include /schemas/associateHealthMonitorWithPoolRes-schema.json
+resourceTypes:
+  - extension: !include resourceTypes/extension.raml
+  - apiVersions: !include resourceTypes/apiVersions.raml
+  - extensions: !include resourceTypes/extensions.raml
 /: 
-  get: 
-    description: List API versions
-    responses: 
-      200: 
-        body: 
-          application/xml: 
-            schema: neutronVersionsResponseXML
-            example: !include examples/neutronVersionsResponse-example.xml
-          application/json: 
-            schema: neutronVersionsResponse
-            example: !include examples/neutronVersionsResponse-example.json
+  type: apiVersions
 /{version}: 
   get: 
     description: Show API details
@@ -243,29 +237,9 @@ schemas:
             schema: showAPIDetails
             example: !include examples/showAPIDetails-example.json
   /extensions: 
-    get: 
-      description: List extensions
-      responses: 
-        200: 
-          body: 
-            application/xml: 
-              schema: listExtensionsResXML
-              example: !include examples/listExtensionsResXML-example.xml
-            application/json: 
-              schema: listExtensionsRes
-              example: !include examples/listExtensionsRes-example.json
+    type: extensions
     /{alias}: 
-      get: 
-        description: Get extension details
-        responses: 
-          200: 
-            body: 
-              application/xml: 
-                schema: extensionDetailsXML
-                example: !include examples/extensionDetailsXML-example.xml
-              application/json: 
-                schema: extensionDetails
-                example: !include examples/extensionDetails-example.json
+      type: extension
   /floatingips: 
     post: 
       description: Create floating IP

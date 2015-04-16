@@ -1,0 +1,11 @@
+get: 
+  description: List API versions
+  responses: 
+    200: 
+      body: 
+        application/xml: 
+          schema: neutronVersionsResponseXML
+          example: !include examples/neutronVersionsResponse-example.xml
+        application/json: 
+          schema: neutronVersionsResponse
+          example: !include examples/neutronVersionsResponse-example.json

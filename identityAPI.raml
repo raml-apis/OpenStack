@@ -96,6 +96,16 @@ schemas:
   - userupdateresponse: !include schemas/userupdateresponse-schema.json
   - listVersionsIdentityAPIRes: !include /schemas/listVersionsIdentityAPIRes-schema.json
   - listVersionsIdentityAPIResXML: !include /schemas/listVersionsIdentityAPIResXML-schema.xsd
+  - badRequest: !include schemas/badRequest-schema.xsd
+  - unauthorized: !include schemas/unauthorized-schema.xsd
+  - forbidden: !include schemas/forbidden-schema.xsd
+  - badMethod: !include schemas/badMethod-schema.xsd
+  - overLimit: !include schemas/overLimit-schema.xsd
+  - serviceUnavailable: !include schemas/serviceUnavailable-schema.xsd
+  - itemNotFound: !include schemas/itemNotFound-schema.xsd
+resourceTypes:
+  - authenticate: !include resourceTypes/authenticate.raml
+  - role: !include resourceTypes/role.raml
 traits:
   - xAuthToken: !include traits/xAuthToken.raml
 /: 
@@ -264,59 +274,7 @@ traits:
                 schema: ""
   /auth: 
     /tokens: 
-      post: 
-        description: Authenticate
-        body: 
-          application/json: 
-            schema: tokenauthpasswordidrequest
-            example: !include examples/tokenauthpasswordidrequest-example.json
-        responses: 
-          201: 
-            body: 
-              application/json: 
-                schema: tokenauthnoscoperesponse
-                example: !include examples/tokenauthnoscoperesponse-example.json
-          401: 
-            body: 
-              application/json: 
-                schema: tokenauthfail401aresponse
-                example: !include examples/tokenauthfail401aresponse-example.json
-          400: 
-            body: 
-              application/xml: 
-                schema: badRequest
-              application/json: 
-                schema: ""
-          403: 
-            body: 
-              application/xml: 
-                schema: forbidden
-              application/json: 
-                schema: ""
-          405: 
-            body: 
-              application/xml: 
-                schema: badMethod
-              application/json: 
-                schema: ""
-          413: 
-            body: 
-              application/xml: 
-                schema: overLimit
-              application/json: 
-                schema: ""
-          503: 
-            body: 
-              application/xml: 
-                schema: serviceUnavailable
-              application/json: 
-                schema: ""
-          404: 
-            body: 
-              application/xml: 
-                schema: itemNotFound
-              application/json: 
-                schema: ""
+      type: authenticate
       get: 
         description: Validate token
         headers: 
@@ -1025,6 +983,7 @@ traits:
       /groups: 
         /{group_id}: 
           /roles: 
+            type: role
             get: 
               description: List roles for domain group
               responses: 
@@ -1075,148 +1034,10 @@ traits:
                       schema: itemNotFound
                     application/json: 
                       schema: ""
-            /{role_id}: 
-              put: 
-                description: Grant role to domain group
-                responses: 
-                  204: 
-                  400: 
-                    body: 
-                      application/xml: 
-                        schema: badRequest
-                      application/json: 
-                        schema: ""
-                  401: 
-                    body: 
-                      application/xml: 
-                        schema: unauthorized
-                      application/json: 
-                        schema: ""
-                  403: 
-                    body: 
-                      application/xml: 
-                        schema: forbidden
-                      application/json: 
-                        schema: ""
-                  405: 
-                    body: 
-                      application/xml: 
-                        schema: badMethod
-                      application/json: 
-                        schema: ""
-                  413: 
-                    body: 
-                      application/xml: 
-                        schema: overLimit
-                      application/json: 
-                        schema: ""
-                  503: 
-                    body: 
-                      application/xml: 
-                        schema: serviceUnavailable
-                      application/json: 
-                        schema: ""
-                  404: 
-                    body: 
-                      application/xml: 
-                        schema: itemNotFound
-                      application/json: 
-                        schema: ""
-              head: 
-                description: Check role for domain group
-                responses: 
-                  204: 
-                  400: 
-                    body: 
-                      application/xml: 
-                        schema: badRequest
-                      application/json: 
-                        schema: ""
-                  401: 
-                    body: 
-                      application/xml: 
-                        schema: unauthorized
-                      application/json: 
-                        schema: ""
-                  403: 
-                    body: 
-                      application/xml: 
-                        schema: forbidden
-                      application/json: 
-                        schema: ""
-                  405: 
-                    body: 
-                      application/xml: 
-                        schema: badMethod
-                      application/json: 
-                        schema: ""
-                  413: 
-                    body: 
-                      application/xml: 
-                        schema: overLimit
-                      application/json: 
-                        schema: ""
-                  503: 
-                    body: 
-                      application/xml: 
-                        schema: serviceUnavailable
-                      application/json: 
-                        schema: ""
-                  404: 
-                    body: 
-                      application/xml: 
-                        schema: itemNotFound
-                      application/json: 
-                        schema: ""
-              delete: 
-                description: Revoke role from domain group
-                responses: 
-                  204: 
-                  400: 
-                    body: 
-                      application/xml: 
-                        schema: badRequest
-                      application/json: 
-                        schema: ""
-                  401: 
-                    body: 
-                      application/xml: 
-                        schema: unauthorized
-                      application/json: 
-                        schema: ""
-                  403: 
-                    body: 
-                      application/xml: 
-                        schema: forbidden
-                      application/json: 
-                        schema: ""
-                  405: 
-                    body: 
-                      application/xml: 
-                        schema: badMethod
-                      application/json: 
-                        schema: ""
-                  413: 
-                    body: 
-                      application/xml: 
-                        schema: overLimit
-                      application/json: 
-                        schema: ""
-                  503: 
-                    body: 
-                      application/xml: 
-                        schema: serviceUnavailable
-                      application/json: 
-                        schema: ""
-                  404: 
-                    body: 
-                      application/xml: 
-                        schema: itemNotFound
-                      application/json: 
-                        schema: ""
       /users: 
         /{user_id}: 
           /roles: 
+            type: role
             get: 
               description: List roles for domain user
               responses: 
@@ -1267,145 +1088,6 @@ traits:
                       schema: itemNotFound
                     application/json: 
                       schema: ""
-            /{role_id}: 
-              put: 
-                description: Grant role to domain user
-                responses: 
-                  204: 
-                  400: 
-                    body: 
-                      application/xml: 
-                        schema: badRequest
-                      application/json: 
-                        schema: ""
-                  401: 
-                    body: 
-                      application/xml: 
-                        schema: unauthorized
-                      application/json: 
-                        schema: ""
-                  403: 
-                    body: 
-                      application/xml: 
-                        schema: forbidden
-                      application/json: 
-                        schema: ""
-                  405: 
-                    body: 
-                      application/xml: 
-                        schema: badMethod
-                      application/json: 
-                        schema: ""
-                  413: 
-                    body: 
-                      application/xml: 
-                        schema: overLimit
-                      application/json: 
-                        schema: ""
-                  503: 
-                    body: 
-                      application/xml: 
-                        schema: serviceUnavailable
-                      application/json: 
-                        schema: ""
-                  404: 
-                    body: 
-                      application/xml: 
-                        schema: itemNotFound
-                      application/json: 
-                        schema: ""
-              head: 
-                description: Check role for domain user
-                responses: 
-                  204: 
-                  400: 
-                    body: 
-                      application/xml: 
-                        schema: badRequest
-                      application/json: 
-                        schema: ""
-                  401: 
-                    body: 
-                      application/xml: 
-                        schema: unauthorized
-                      application/json: 
-                        schema: ""
-                  403: 
-                    body: 
-                      application/xml: 
-                        schema: forbidden
-                      application/json: 
-                        schema: ""
-                  405: 
-                    body: 
-                      application/xml: 
-                        schema: badMethod
-                      application/json: 
-                        schema: ""
-                  413: 
-                    body: 
-                      application/xml: 
-                        schema: overLimit
-                      application/json: 
-                        schema: ""
-                  503: 
-                    body: 
-                      application/xml: 
-                        schema: serviceUnavailable
-                      application/json: 
-                        schema: ""
-                  404: 
-                    body: 
-                      application/xml: 
-                        schema: itemNotFound
-                      application/json: 
-                        schema: ""
-              delete: 
-                description: Revoke role from domain user
-                responses: 
-                  204: 
-                  400: 
-                    body: 
-                      application/xml: 
-                        schema: badRequest
-                      application/json: 
-                        schema: ""
-                  401: 
-                    body: 
-                      application/xml: 
-                        schema: unauthorized
-                      application/json: 
-                        schema: ""
-                  403: 
-                    body: 
-                      application/xml: 
-                        schema: forbidden
-                      application/json: 
-                        schema: ""
-                  405: 
-                    body: 
-                      application/xml: 
-                        schema: badMethod
-                      application/json: 
-                        schema: ""
-                  413: 
-                    body: 
-                      application/xml: 
-                        schema: overLimit
-                      application/json: 
-                        schema: ""
-                  503: 
-                    body: 
-                      application/xml: 
-                        schema: serviceUnavailable
-                      application/json: 
-                        schema: ""
-                  404: 
-                    body: 
-                      application/xml: 
-                        schema: itemNotFound
-                      application/json: 
-                        schema: ""
   /endpoints: 
     post: 
       description: Add endpoint
@@ -2838,6 +2520,7 @@ traits:
       /users: 
         /{user_id}: 
           /roles: 
+            type: role
             get: 
               description: List roles for project user
               headers: 
@@ -2893,160 +2576,6 @@ traits:
                       schema: itemNotFound
                     application/json: 
                       schema: ""
-            /{role_id}: 
-              put: 
-                description: Grant role to project user
-                headers: 
-                  X-Auth-Token: 
-                    description: A valid authentication token for an administrative user.
-                    required: true
-                    example: 1dd7e3
-                responses: 
-                  204: 
-                  400: 
-                    body: 
-                      application/xml: 
-                        schema: badRequest
-                      application/json: 
-                        schema: ""
-                  401: 
-                    body: 
-                      application/xml: 
-                        schema: unauthorized
-                      application/json: 
-                        schema: ""
-                  403: 
-                    body: 
-                      application/xml: 
-                        schema: forbidden
-                      application/json: 
-                        schema: ""
-                  405: 
-                    body: 
-                      application/xml: 
-                        schema: badMethod
-                      application/json: 
-                        schema: ""
-                  413: 
-                    body: 
-                      application/xml: 
-                        schema: overLimit
-                      application/json: 
-                        schema: ""
-                  503: 
-                    body: 
-                      application/xml: 
-                        schema: serviceUnavailable
-                      application/json: 
-                        schema: ""
-                  404: 
-                    body: 
-                      application/xml: 
-                        schema: itemNotFound
-                      application/json: 
-                        schema: ""
-              head: 
-                description: Check role for project user
-                headers: 
-                  X-Auth-Token: 
-                    description: A valid authentication token for an administrative user.
-                    required: true
-                    example: 1dd7e3
-                responses: 
-                  204: 
-                  400: 
-                    body: 
-                      application/xml: 
-                        schema: badRequest
-                      application/json: 
-                        schema: ""
-                  401: 
-                    body: 
-                      application/xml: 
-                        schema: unauthorized
-                      application/json: 
-                        schema: ""
-                  403: 
-                    body: 
-                      application/xml: 
-                        schema: forbidden
-                      application/json: 
-                        schema: ""
-                  405: 
-                    body: 
-                      application/xml: 
-                        schema: badMethod
-                      application/json: 
-                        schema: ""
-                  413: 
-                    body: 
-                      application/xml: 
-                        schema: overLimit
-                      application/json: 
-                        schema: ""
-                  503: 
-                    body: 
-                      application/xml: 
-                        schema: serviceUnavailable
-                      application/json: 
-                        schema: ""
-                  404: 
-                    body: 
-                      application/xml: 
-                        schema: itemNotFound
-                      application/json: 
-                        schema: ""
-              delete: 
-                description: Revoke role from project user
-                headers: 
-                  X-Auth-Token: 
-                    description: A valid authentication token for an administrative user.
-                    required: true
-                    example: 1dd7e3
-                responses: 
-                  204: 
-                  400: 
-                    body: 
-                      application/xml: 
-                        schema: badRequest
-                      application/json: 
-                        schema: ""
-                  401: 
-                    body: 
-                      application/xml: 
-                        schema: unauthorized
-                      application/json: 
-                        schema: ""
-                  403: 
-                    body: 
-                      application/xml: 
-                        schema: forbidden
-                      application/json: 
-                        schema: ""
-                  405: 
-                    body: 
-                      application/xml: 
-                        schema: badMethod
-                      application/json: 
-                        schema: ""
-                  413: 
-                    body: 
-                      application/xml: 
-                        schema: overLimit
-                      application/json: 
-                        schema: ""
-                  503: 
-                    body: 
-                      application/xml: 
-                        schema: serviceUnavailable
-                      application/json: 
-                        schema: ""
-                  404: 
-                    body: 
-                      application/xml: 
-                        schema: itemNotFound
-                      application/json: 
-                        schema: ""
   /role_assignments: 
     get: 
       description: List role assignments
