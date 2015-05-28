@@ -1,4 +1,3 @@
-#%RAML 0.8
 /{role_id}: 
   put: 
     description: Grant role
@@ -9,43 +8,43 @@
           application/xml: 
             schema: badRequest
           application/json: 
-            schema: ""
+            
       401: 
         body: 
           application/xml: 
             schema: unauthorized
           application/json: 
-            schema: ""
+            
       403: 
         body: 
           application/xml: 
             schema: forbidden
           application/json: 
-            schema: ""
+            
       405: 
         body: 
           application/xml: 
             schema: badMethod
           application/json: 
-            schema: ""
+            
       413: 
         body: 
           application/xml: 
             schema: overLimit
           application/json: 
-            schema: ""
+            
       503: 
         body: 
           application/xml: 
             schema: serviceUnavailable
           application/json: 
-            schema: ""
+            
       404: 
         body: 
           application/xml: 
             schema: itemNotFound
           application/json: 
-            schema: ""
+            
   head: 
     description: Check role
     responses: 
@@ -55,43 +54,43 @@
           application/xml: 
             schema: badRequest
           application/json: 
-            schema: ""
+            
       401: 
         body: 
           application/xml: 
             schema: unauthorized
           application/json: 
-            schema: ""
+            
       403: 
         body: 
           application/xml: 
             schema: forbidden
           application/json: 
-            schema: ""
+            
       405: 
         body: 
           application/xml: 
             schema: badMethod
           application/json: 
-            schema: ""
+            
       413: 
         body: 
           application/xml: 
             schema: overLimit
           application/json: 
-            schema: ""
+            
       503: 
         body: 
           application/xml: 
             schema: serviceUnavailable
           application/json: 
-            schema: ""
+            
       404: 
         body: 
           application/xml: 
             schema: itemNotFound
           application/json: 
-            schema: ""
+            
   delete: 
     description: Revoke role
     responses: 
@@ -101,40 +100,40 @@
           application/xml: 
             schema: badRequest
           application/json: 
-            schema: ""
+            
       401: 
         body: 
           application/xml: 
             schema: unauthorized
           application/json: 
-            schema: ""
+            
       403: 
         body: 
           application/xml: 
             schema: forbidden
           application/json: 
-            schema: ""
+            
       405: 
         body: 
           application/xml: 
             schema: badMethod
           application/json: 
-            schema: ""
+            
       413: 
         body: 
           application/xml: 
             schema: overLimit
           application/json: 
-            schema: ""
+            
       503: 
         body: 
           application/xml: 
             schema: serviceUnavailable
           application/json: 
-            schema: ""
+            
       404: 
         body: 
           application/xml: 
             schema: itemNotFound
           application/json: 
-            schema: ""
+            

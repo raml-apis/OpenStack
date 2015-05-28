@@ -94,8 +94,8 @@ schemas:
   - userslistresponse: !include schemas/userslistresponse-schema.json
   - userupdaterequest: !include schemas/userupdaterequest-schema.json
   - userupdateresponse: !include schemas/userupdateresponse-schema.json
-  - listVersionsIdentityAPIRes: !include /schemas/listVersionsIdentityAPIRes-schema.json
-  - listVersionsIdentityAPIResXML: !include /schemas/listVersionsIdentityAPIResXML-schema.xsd
+  - listVersionsIdentityAPIRes: !include schemas/listVersionsIdentityAPIRes-schema.json
+  - listVersionsIdentityAPIResXML: !include schemas/listVersionsIdentityAPIResXML-schema.xsd
   - badRequest: !include schemas/badRequest-schema.xsd
   - unauthorized: !include schemas/unauthorized-schema.xsd
   - forbidden: !include schemas/forbidden-schema.xsd
@@ -125,43 +125,36 @@ traits:
           application/xml: 
             schema: badRequest
           application/json: 
-            schema: ""
       401: 
         body: 
           application/xml: 
             schema: unauthorized
           application/json: 
-            schema: ""
       403: 
         body: 
           application/xml: 
             schema: forbidden
           application/json: 
-            schema: ""
       405: 
         body: 
           application/xml: 
             schema: badMethod
           application/json: 
-            schema: ""
       413: 
         body: 
           application/xml: 
             schema: overLimit
           application/json: 
-            schema: ""
       503: 
         body: 
           application/xml: 
             schema: serviceUnavailable
           application/json: 
-            schema: ""
       404: 
         body: 
           application/xml: 
             schema: itemNotFound
           application/json: 
-            schema: ""
 /{version}: 
   get: 
     description: Show API version details
@@ -171,43 +164,36 @@ traits:
           application/xml: 
             schema: badRequest
           application/json: 
-            schema: ""
       401: 
         body: 
           application/xml: 
             schema: unauthorized
           application/json: 
-            schema: ""
       403: 
         body: 
           application/xml: 
             schema: forbidden
           application/json: 
-            schema: ""
       405: 
         body: 
           application/xml: 
             schema: badMethod
           application/json: 
-            schema: ""
       413: 
         body: 
           application/xml: 
             schema: overLimit
           application/json: 
-            schema: ""
       503: 
         body: 
           application/xml: 
             schema: serviceUnavailable
           application/json: 
-            schema: ""
       404: 
         body: 
           application/xml: 
             schema: itemNotFound
           application/json: 
-            schema: ""
       200: 
         body: 
           application/xml: 
@@ -235,43 +221,36 @@ traits:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
   /auth: 
     /tokens: 
       type: authenticate
@@ -296,43 +275,36 @@ traits:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       head: 
         description: Check token
         headers: 
@@ -351,43 +323,36 @@ traits:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       delete: 
         description: Revoke token
         headers: 
@@ -403,43 +368,36 @@ traits:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
   /credentials: 
     post: 
       description: Add credential
@@ -458,43 +416,36 @@ traits:
             application/xml: 
               schema: badRequest
             application/json: 
-              schema: ""
         401: 
           body: 
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
         403: 
           body: 
             application/xml: 
               schema: forbidden
             application/json: 
-              schema: ""
         405: 
           body: 
             application/xml: 
               schema: badMethod
             application/json: 
-              schema: ""
         413: 
           body: 
             application/xml: 
               schema: overLimit
             application/json: 
-              schema: ""
         503: 
           body: 
             application/xml: 
               schema: serviceUnavailable
             application/json: 
-              schema: ""
         404: 
           body: 
             application/xml: 
               schema: itemNotFound
             application/json: 
-              schema: ""
     get: 
       is: [ xAuthToken ]
       description: List credentials
@@ -516,43 +467,36 @@ traits:
             application/xml: 
               schema: badRequest
             application/json: 
-              schema: ""
         401: 
           body: 
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
         403: 
           body: 
             application/xml: 
               schema: forbidden
             application/json: 
-              schema: ""
         405: 
           body: 
             application/xml: 
               schema: badMethod
             application/json: 
-              schema: ""
         413: 
           body: 
             application/xml: 
               schema: overLimit
             application/json: 
-              schema: ""
         503: 
           body: 
             application/xml: 
               schema: serviceUnavailable
             application/json: 
-              schema: ""
         404: 
           body: 
             application/xml: 
               schema: itemNotFound
             application/json: 
-              schema: ""
     /{credential_id}: 
       get: 
         description: Show credential details
@@ -567,43 +511,36 @@ traits:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       patch: 
         description: Update credential
         body: 
@@ -621,43 +558,36 @@ traits:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       delete: 
         description: Delete credential
         responses: 
@@ -667,43 +597,36 @@ traits:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
   /domains: 
     post: 
       description: Add domain
@@ -726,43 +649,36 @@ traits:
             application/xml: 
               schema: badRequest
             application/json: 
-              schema: ""
         401: 
           body: 
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
         403: 
           body: 
             application/xml: 
               schema: forbidden
             application/json: 
-              schema: ""
         405: 
           body: 
             application/xml: 
               schema: badMethod
             application/json: 
-              schema: ""
         413: 
           body: 
             application/xml: 
               schema: overLimit
             application/json: 
-              schema: ""
         503: 
           body: 
             application/xml: 
               schema: serviceUnavailable
             application/json: 
-              schema: ""
         404: 
           body: 
             application/xml: 
               schema: itemNotFound
             application/json: 
-              schema: ""
     get: 
       description: List domains
       queryParameters: 
@@ -787,43 +703,36 @@ traits:
             application/xml: 
               schema: badRequest
             application/json: 
-              schema: ""
         401: 
           body: 
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
         403: 
           body: 
             application/xml: 
               schema: forbidden
             application/json: 
-              schema: ""
         405: 
           body: 
             application/xml: 
               schema: badMethod
             application/json: 
-              schema: ""
         413: 
           body: 
             application/xml: 
               schema: overLimit
             application/json: 
-              schema: ""
         503: 
           body: 
             application/xml: 
               schema: serviceUnavailable
             application/json: 
-              schema: ""
         404: 
           body: 
             application/xml: 
               schema: itemNotFound
             application/json: 
-              schema: ""
     /{domain_id}: 
       get: 
         description: Show domain details
@@ -838,43 +747,36 @@ traits:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       patch: 
         description: Update domain
         headers: 
@@ -897,43 +799,36 @@ traits:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       delete: 
         description: Delete domain
         responses: 
@@ -943,43 +838,36 @@ traits:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       /groups: 
         /{group_id}: 
           /roles: 
@@ -997,43 +885,36 @@ traits:
                     application/xml: 
                       schema: badRequest
                     application/json: 
-                      schema: ""
                 401: 
                   body: 
                     application/xml: 
                       schema: unauthorized
                     application/json: 
-                      schema: ""
                 403: 
                   body: 
                     application/xml: 
                       schema: forbidden
                     application/json: 
-                      schema: ""
                 405: 
                   body: 
                     application/xml: 
                       schema: badMethod
                     application/json: 
-                      schema: ""
                 413: 
                   body: 
                     application/xml: 
                       schema: overLimit
                     application/json: 
-                      schema: ""
                 503: 
                   body: 
                     application/xml: 
                       schema: serviceUnavailable
                     application/json: 
-                      schema: ""
                 404: 
                   body: 
                     application/xml: 
                       schema: itemNotFound
                     application/json: 
-                      schema: ""
       /users: 
         /{user_id}: 
           /roles: 
@@ -1051,43 +932,36 @@ traits:
                     application/xml: 
                       schema: badRequest
                     application/json: 
-                      schema: ""
                 401: 
                   body: 
                     application/xml: 
                       schema: unauthorized
                     application/json: 
-                      schema: ""
                 403: 
                   body: 
                     application/xml: 
                       schema: forbidden
                     application/json: 
-                      schema: ""
                 405: 
                   body: 
                     application/xml: 
                       schema: badMethod
                     application/json: 
-                      schema: ""
                 413: 
                   body: 
                     application/xml: 
                       schema: overLimit
                     application/json: 
-                      schema: ""
                 503: 
                   body: 
                     application/xml: 
                       schema: serviceUnavailable
                     application/json: 
-                      schema: ""
                 404: 
                   body: 
                     application/xml: 
                       schema: itemNotFound
                     application/json: 
-                      schema: ""
   /endpoints: 
     post: 
       description: Add endpoint
@@ -1109,43 +983,36 @@ traits:
             application/xml: 
               schema: badRequest
             application/json: 
-              schema: ""
         401: 
           body: 
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
         403: 
           body: 
             application/xml: 
               schema: forbidden
             application/json: 
-              schema: ""
         405: 
           body: 
             application/xml: 
               schema: badMethod
             application/json: 
-              schema: ""
         413: 
           body: 
             application/xml: 
               schema: overLimit
             application/json: 
-              schema: ""
         503: 
           body: 
             application/xml: 
               schema: serviceUnavailable
             application/json: 
-              schema: ""
         404: 
           body: 
             application/xml: 
               schema: itemNotFound
             application/json: 
-              schema: ""
     get: 
       description: List endpoints
       headers: 
@@ -1162,43 +1029,36 @@ traits:
             application/xml: 
               schema: badRequest
             application/json: 
-              schema: ""
         401: 
           body: 
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
         403: 
           body: 
             application/xml: 
               schema: forbidden
             application/json: 
-              schema: ""
         405: 
           body: 
             application/xml: 
               schema: badMethod
             application/json: 
-              schema: ""
         413: 
           body: 
             application/xml: 
               schema: overLimit
             application/json: 
-              schema: ""
         503: 
           body: 
             application/xml: 
               schema: serviceUnavailable
             application/json: 
-              schema: ""
         404: 
           body: 
             application/xml: 
               schema: itemNotFound
             application/json: 
-              schema: ""
     /{endpoint_id}: 
       patch: 
         description: Update endpoint
@@ -1221,43 +1081,36 @@ traits:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       delete: 
         description: Delete endpoint
         headers: 
@@ -1271,43 +1124,36 @@ traits:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
   /groups: 
     post: 
       description: Add group
@@ -1326,43 +1172,36 @@ traits:
             application/xml: 
               schema: badRequest
             application/json: 
-              schema: ""
         401: 
           body: 
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
         403: 
           body: 
             application/xml: 
               schema: forbidden
             application/json: 
-              schema: ""
         405: 
           body: 
             application/xml: 
               schema: badMethod
             application/json: 
-              schema: ""
         413: 
           body: 
             application/xml: 
               schema: overLimit
             application/json: 
-              schema: ""
         503: 
           body: 
             application/xml: 
               schema: serviceUnavailable
             application/json: 
-              schema: ""
         404: 
           body: 
             application/xml: 
               schema: itemNotFound
             application/json: 
-              schema: ""
     get: 
       description: List groups
       headers: 
@@ -1383,43 +1222,36 @@ traits:
             application/xml: 
               schema: badRequest
             application/json: 
-              schema: ""
         401: 
           body: 
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
         403: 
           body: 
             application/xml: 
               schema: forbidden
             application/json: 
-              schema: ""
         405: 
           body: 
             application/xml: 
               schema: badMethod
             application/json: 
-              schema: ""
         413: 
           body: 
             application/xml: 
               schema: overLimit
             application/json: 
-              schema: ""
         503: 
           body: 
             application/xml: 
               schema: serviceUnavailable
             application/json: 
-              schema: ""
         404: 
           body: 
             application/xml: 
               schema: itemNotFound
             application/json: 
-              schema: ""
     /{group_id}: 
       get: 
         description: Show group details
@@ -1434,43 +1266,36 @@ traits:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       patch: 
         description: Update group
         body: 
@@ -1488,43 +1313,36 @@ traits:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       delete: 
         description: Delete group
         responses: 
@@ -1534,43 +1352,36 @@ traits:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       /users: 
         get: 
           description: List users in group
@@ -1597,43 +1408,36 @@ traits:
                 application/xml: 
                   schema: badRequest
                 application/json: 
-                  schema: ""
             401: 
               body: 
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             403: 
               body: 
                 application/xml: 
                   schema: forbidden
                 application/json: 
-                  schema: ""
             405: 
               body: 
                 application/xml: 
                   schema: badMethod
                 application/json: 
-                  schema: ""
             413: 
               body: 
                 application/xml: 
                   schema: overLimit
                 application/json: 
-                  schema: ""
             503: 
               body: 
                 application/xml: 
                   schema: serviceUnavailable
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
         /{user_id}: 
           put: 
             description: Add user to group
@@ -1644,43 +1448,36 @@ traits:
                   application/xml: 
                     schema: badRequest
                   application/json: 
-                    schema: ""
               401: 
                 body: 
                   application/xml: 
                     schema: unauthorized
                   application/json: 
-                    schema: ""
               403: 
                 body: 
                   application/xml: 
                     schema: forbidden
                   application/json: 
-                    schema: ""
               405: 
                 body: 
                   application/xml: 
                     schema: badMethod
                   application/json: 
-                    schema: ""
               413: 
                 body: 
                   application/xml: 
                     schema: overLimit
                   application/json: 
-                    schema: ""
               503: 
                 body: 
                   application/xml: 
                     schema: serviceUnavailable
                   application/json: 
-                    schema: ""
               404: 
                 body: 
                   application/xml: 
                     schema: itemNotFound
                   application/json: 
-                    schema: ""
           delete: 
             description: Remove user from group
             responses: 
@@ -1690,43 +1487,36 @@ traits:
                   application/xml: 
                     schema: badRequest
                   application/json: 
-                    schema: ""
               401: 
                 body: 
                   application/xml: 
                     schema: unauthorized
                   application/json: 
-                    schema: ""
               403: 
                 body: 
                   application/xml: 
                     schema: forbidden
                   application/json: 
-                    schema: ""
               405: 
                 body: 
                   application/xml: 
                     schema: badMethod
                   application/json: 
-                    schema: ""
               413: 
                 body: 
                   application/xml: 
                     schema: overLimit
                   application/json: 
-                    schema: ""
               503: 
                 body: 
                   application/xml: 
                     schema: serviceUnavailable
                   application/json: 
-                    schema: ""
               404: 
                 body: 
                   application/xml: 
                     schema: itemNotFound
                   application/json: 
-                    schema: ""
           head: 
             description: Check user membership in group
             responses: 
@@ -1736,43 +1526,36 @@ traits:
                   application/xml: 
                     schema: badRequest
                   application/json: 
-                    schema: ""
               401: 
                 body: 
                   application/xml: 
                     schema: unauthorized
                   application/json: 
-                    schema: ""
               403: 
                 body: 
                   application/xml: 
                     schema: forbidden
                   application/json: 
-                    schema: ""
               405: 
                 body: 
                   application/xml: 
                     schema: badMethod
                   application/json: 
-                    schema: ""
               413: 
                 body: 
                   application/xml: 
                     schema: overLimit
                   application/json: 
-                    schema: ""
               503: 
                 body: 
                   application/xml: 
                     schema: serviceUnavailable
                   application/json: 
-                    schema: ""
               404: 
                 body: 
                   application/xml: 
                     schema: itemNotFound
                   application/json: 
-                    schema: ""
   /policies: 
     post: 
       description: Add policy
@@ -1794,43 +1577,36 @@ traits:
             application/xml: 
               schema: badRequest
             application/json: 
-              schema: ""
         401: 
           body: 
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
         403: 
           body: 
             application/xml: 
               schema: forbidden
             application/json: 
-              schema: ""
         405: 
           body: 
             application/xml: 
               schema: badMethod
             application/json: 
-              schema: ""
         413: 
           body: 
             application/xml: 
               schema: overLimit
             application/json: 
-              schema: ""
         503: 
           body: 
             application/xml: 
               schema: serviceUnavailable
             application/json: 
-              schema: ""
         404: 
           body: 
             application/xml: 
               schema: itemNotFound
             application/json: 
-              schema: ""
     get: 
       description: List policies
       headers: 
@@ -1856,43 +1632,36 @@ traits:
             application/xml: 
               schema: badRequest
             application/json: 
-              schema: ""
         401: 
           body: 
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
         403: 
           body: 
             application/xml: 
               schema: forbidden
             application/json: 
-              schema: ""
         405: 
           body: 
             application/xml: 
               schema: badMethod
             application/json: 
-              schema: ""
         413: 
           body: 
             application/xml: 
               schema: overLimit
             application/json: 
-              schema: ""
         503: 
           body: 
             application/xml: 
               schema: serviceUnavailable
             application/json: 
-              schema: ""
         404: 
           body: 
             application/xml: 
               schema: itemNotFound
             application/json: 
-              schema: ""
     /{policy_id}: 
       get: 
         is: [ xAuthToken ]
@@ -1908,43 +1677,36 @@ traits:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       patch: 
         is: [ xAuthToken ]
         description: Update policy
@@ -1963,43 +1725,36 @@ traits:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       delete: 
         is: [ xAuthToken ]
         description: Delete policy
@@ -2010,43 +1765,36 @@ traits:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
   /projects: 
     post: 
       description: Add project
@@ -2068,43 +1816,36 @@ traits:
             application/xml: 
               schema: badRequest
             application/json: 
-              schema: ""
         401: 
           body: 
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
         403: 
           body: 
             application/xml: 
               schema: forbidden
             application/json: 
-              schema: ""
         405: 
           body: 
             application/xml: 
               schema: badMethod
             application/json: 
-              schema: ""
         413: 
           body: 
             application/xml: 
               schema: overLimit
             application/json: 
-              schema: ""
         503: 
           body: 
             application/xml: 
               schema: serviceUnavailable
             application/json: 
-              schema: ""
         404: 
           body: 
             application/xml: 
               schema: itemNotFound
             application/json: 
-              schema: ""
     get: 
       description: List projects
       headers: 
@@ -2121,43 +1862,36 @@ traits:
             application/xml: 
               schema: badRequest
             application/json: 
-              schema: ""
         401: 
           body: 
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
         403: 
           body: 
             application/xml: 
               schema: forbidden
             application/json: 
-              schema: ""
         405: 
           body: 
             application/xml: 
               schema: badMethod
             application/json: 
-              schema: ""
         413: 
           body: 
             application/xml: 
               schema: overLimit
             application/json: 
-              schema: ""
         503: 
           body: 
             application/xml: 
               schema: serviceUnavailable
             application/json: 
-              schema: ""
         404: 
           body: 
             application/xml: 
               schema: itemNotFound
             application/json: 
-              schema: ""
     /{project_id}: 
       get: 
         description: Show project details
@@ -2176,43 +1910,36 @@ traits:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       patch: 
         description: Update project
         headers: 
@@ -2234,43 +1961,36 @@ traits:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       delete: 
         description: Delete project
         headers: 
@@ -2284,43 +2004,36 @@ traits:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       /groups: 
         /{group_id}: 
           /roles: 
@@ -2338,43 +2051,36 @@ traits:
                     application/xml: 
                       schema: badRequest
                     application/json: 
-                      schema: ""
                 401: 
                   body: 
                     application/xml: 
                       schema: unauthorized
                     application/json: 
-                      schema: ""
                 403: 
                   body: 
                     application/xml: 
                       schema: forbidden
                     application/json: 
-                      schema: ""
                 405: 
                   body: 
                     application/xml: 
                       schema: badMethod
                     application/json: 
-                      schema: ""
                 413: 
                   body: 
                     application/xml: 
                       schema: overLimit
                     application/json: 
-                      schema: ""
                 503: 
                   body: 
                     application/xml: 
                       schema: serviceUnavailable
                     application/json: 
-                      schema: ""
                 404: 
                   body: 
                     application/xml: 
                       schema: itemNotFound
                     application/json: 
-                      schema: ""
             /{role_id}: 
               put: 
                 is: [ xAuthToken ]
@@ -2386,43 +2092,36 @@ traits:
                       application/xml: 
                         schema: badRequest
                       application/json: 
-                        schema: ""
                   401: 
                     body: 
                       application/xml: 
                         schema: unauthorized
                       application/json: 
-                        schema: ""
                   403: 
                     body: 
                       application/xml: 
                         schema: forbidden
                       application/json: 
-                        schema: ""
                   405: 
                     body: 
                       application/xml: 
                         schema: badMethod
                       application/json: 
-                        schema: ""
                   413: 
                     body: 
                       application/xml: 
                         schema: overLimit
                       application/json: 
-                        schema: ""
                   503: 
                     body: 
                       application/xml: 
                         schema: serviceUnavailable
                       application/json: 
-                        schema: ""
                   404: 
                     body: 
                       application/xml: 
                         schema: itemNotFound
                       application/json: 
-                        schema: ""
               head: 
                 is: [ xAuthToken ]
                 description: Check role for project group
@@ -2433,43 +2132,36 @@ traits:
                       application/xml: 
                         schema: badRequest
                       application/json: 
-                        schema: ""
                   401: 
                     body: 
                       application/xml: 
                         schema: unauthorized
                       application/json: 
-                        schema: ""
                   403: 
                     body: 
                       application/xml: 
                         schema: forbidden
                       application/json: 
-                        schema: ""
                   405: 
                     body: 
                       application/xml: 
                         schema: badMethod
                       application/json: 
-                        schema: ""
                   413: 
                     body: 
                       application/xml: 
                         schema: overLimit
                       application/json: 
-                        schema: ""
                   503: 
                     body: 
                       application/xml: 
                         schema: serviceUnavailable
                       application/json: 
-                        schema: ""
                   404: 
                     body: 
                       application/xml: 
                         schema: itemNotFound
                       application/json: 
-                        schema: ""
               delete: 
                 is: [ xAuthToken ]
                 description: Revoke role from project group
@@ -2480,43 +2172,36 @@ traits:
                       application/xml: 
                         schema: badRequest
                       application/json: 
-                        schema: ""
                   401: 
                     body: 
                       application/xml: 
                         schema: unauthorized
                       application/json: 
-                        schema: ""
                   403: 
                     body: 
                       application/xml: 
                         schema: forbidden
                       application/json: 
-                        schema: ""
                   405: 
                     body: 
                       application/xml: 
                         schema: badMethod
                       application/json: 
-                        schema: ""
                   413: 
                     body: 
                       application/xml: 
                         schema: overLimit
                       application/json: 
-                        schema: ""
                   503: 
                     body: 
                       application/xml: 
                         schema: serviceUnavailable
                       application/json: 
-                        schema: ""
                   404: 
                     body: 
                       application/xml: 
                         schema: itemNotFound
                       application/json: 
-                        schema: ""
       /users: 
         /{user_id}: 
           /roles: 
@@ -2539,43 +2224,36 @@ traits:
                     application/xml: 
                       schema: badRequest
                     application/json: 
-                      schema: ""
                 401: 
                   body: 
                     application/xml: 
                       schema: unauthorized
                     application/json: 
-                      schema: ""
                 403: 
                   body: 
                     application/xml: 
                       schema: forbidden
                     application/json: 
-                      schema: ""
                 405: 
                   body: 
                     application/xml: 
                       schema: badMethod
                     application/json: 
-                      schema: ""
                 413: 
                   body: 
                     application/xml: 
                       schema: overLimit
                     application/json: 
-                      schema: ""
                 503: 
                   body: 
                     application/xml: 
                       schema: serviceUnavailable
                     application/json: 
-                      schema: ""
                 404: 
                   body: 
                     application/xml: 
                       schema: itemNotFound
                     application/json: 
-                      schema: ""
   /role_assignments: 
     get: 
       description: List role assignments
@@ -2597,43 +2275,36 @@ traits:
             application/xml: 
               schema: badRequest
             application/json: 
-              schema: ""
         401: 
           body: 
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
         403: 
           body: 
             application/xml: 
               schema: forbidden
             application/json: 
-              schema: ""
         405: 
           body: 
             application/xml: 
               schema: badMethod
             application/json: 
-              schema: ""
         413: 
           body: 
             application/xml: 
               schema: overLimit
             application/json: 
-              schema: ""
         503: 
           body: 
             application/xml: 
               schema: serviceUnavailable
             application/json: 
-              schema: ""
         404: 
           body: 
             application/xml: 
               schema: itemNotFound
             application/json: 
-              schema: ""
   /roles: 
     post: 
       description: Add role
@@ -2655,43 +2326,36 @@ traits:
             application/xml: 
               schema: badRequest
             application/json: 
-              schema: ""
         401: 
           body: 
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
         403: 
           body: 
             application/xml: 
               schema: forbidden
             application/json: 
-              schema: ""
         405: 
           body: 
             application/xml: 
               schema: badMethod
             application/json: 
-              schema: ""
         413: 
           body: 
             application/xml: 
               schema: overLimit
             application/json: 
-              schema: ""
         503: 
           body: 
             application/xml: 
               schema: serviceUnavailable
             application/json: 
-              schema: ""
         404: 
           body: 
             application/xml: 
               schema: itemNotFound
             application/json: 
-              schema: ""
     get: 
       description: List roles
       headers: 
@@ -2717,43 +2381,36 @@ traits:
             application/xml: 
               schema: badRequest
             application/json: 
-              schema: ""
         401: 
           body: 
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
         403: 
           body: 
             application/xml: 
               schema: forbidden
             application/json: 
-              schema: ""
         405: 
           body: 
             application/xml: 
               schema: badMethod
             application/json: 
-              schema: ""
         413: 
           body: 
             application/xml: 
               schema: overLimit
             application/json: 
-              schema: ""
         503: 
           body: 
             application/xml: 
               schema: serviceUnavailable
             application/json: 
-              schema: ""
         404: 
           body: 
             application/xml: 
               schema: itemNotFound
             application/json: 
-              schema: ""
     /{role_id}: 
       get: 
         description: Show role details
@@ -2768,43 +2425,36 @@ traits:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       patch: 
         description: Update role
         body: 
@@ -2822,43 +2472,36 @@ traits:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       delete: 
         description: Delete role
         responses: 
@@ -2868,43 +2511,36 @@ traits:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
   /services: 
     post: 
       description: Add service
@@ -2926,43 +2562,36 @@ traits:
             application/xml: 
               schema: badRequest
             application/json: 
-              schema: ""
         401: 
           body: 
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
         403: 
           body: 
             application/xml: 
               schema: forbidden
             application/json: 
-              schema: ""
         405: 
           body: 
             application/xml: 
               schema: badMethod
             application/json: 
-              schema: ""
         413: 
           body: 
             application/xml: 
               schema: overLimit
             application/json: 
-              schema: ""
         503: 
           body: 
             application/xml: 
               schema: serviceUnavailable
             application/json: 
-              schema: ""
         404: 
           body: 
             application/xml: 
               schema: itemNotFound
             application/json: 
-              schema: ""
     get: 
       description: List services
       headers: 
@@ -2988,43 +2617,36 @@ traits:
             application/xml: 
               schema: badRequest
             application/json: 
-              schema: ""
         401: 
           body: 
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
         403: 
           body: 
             application/xml: 
               schema: forbidden
             application/json: 
-              schema: ""
         405: 
           body: 
             application/xml: 
               schema: badMethod
             application/json: 
-              schema: ""
         413: 
           body: 
             application/xml: 
               schema: overLimit
             application/json: 
-              schema: ""
         503: 
           body: 
             application/xml: 
               schema: serviceUnavailable
             application/json: 
-              schema: ""
         404: 
           body: 
             application/xml: 
               schema: itemNotFound
             application/json: 
-              schema: ""
     /{service_id}: 
       get: 
         description: Show service details
@@ -3043,43 +2665,36 @@ traits:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       patch: 
         description: Update service
         headers: 
@@ -3102,43 +2717,36 @@ traits:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       delete: 
         description: Delete service
         headers: 
@@ -3153,43 +2761,36 @@ traits:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
   /users: 
     post: 
       is: [ xAuthToken ]
@@ -3209,43 +2810,36 @@ traits:
             application/xml: 
               schema: badRequest
             application/json: 
-              schema: ""
         401: 
           body: 
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
         403: 
           body: 
             application/xml: 
               schema: forbidden
             application/json: 
-              schema: ""
         405: 
           body: 
             application/xml: 
               schema: badMethod
             application/json: 
-              schema: ""
         413: 
           body: 
             application/xml: 
               schema: overLimit
             application/json: 
-              schema: ""
         503: 
           body: 
             application/xml: 
               schema: serviceUnavailable
             application/json: 
-              schema: ""
         404: 
           body: 
             application/xml: 
               schema: itemNotFound
             application/json: 
-              schema: ""
     get: 
       description: List users
       headers: 
@@ -3266,7 +2860,6 @@ traits:
           example: 20
       body: 
         application/json: 
-          schema: ""
       responses: 
         200: 
           body: 
@@ -3278,43 +2871,36 @@ traits:
             application/xml: 
               schema: badRequest
             application/json: 
-              schema: ""
         401: 
           body: 
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
         403: 
           body: 
             application/xml: 
               schema: forbidden
             application/json: 
-              schema: ""
         405: 
           body: 
             application/xml: 
               schema: badMethod
             application/json: 
-              schema: ""
         413: 
           body: 
             application/xml: 
               schema: overLimit
             application/json: 
-              schema: ""
         503: 
           body: 
             application/xml: 
               schema: serviceUnavailable
             application/json: 
-              schema: ""
         404: 
           body: 
             application/xml: 
               schema: itemNotFound
             application/json: 
-              schema: ""
     /{user_id}: 
       get: 
         is: [ xAuthToken ]
@@ -3330,43 +2916,36 @@ traits:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       patch: 
         is: [ xAuthToken ]
         description: Update user
@@ -3385,43 +2964,36 @@ traits:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       delete: 
         is: [ xAuthToken ]
         description: Delete user
@@ -3432,43 +3004,36 @@ traits:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       /groups: 
         get: 
           is: [ xAuthToken ]
@@ -3484,43 +3049,36 @@ traits:
                 application/xml: 
                   schema: badRequest
                 application/json: 
-                  schema: ""
             401: 
               body: 
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             403: 
               body: 
                 application/xml: 
                   schema: forbidden
                 application/json: 
-                  schema: ""
             405: 
               body: 
                 application/xml: 
                   schema: badMethod
                 application/json: 
-                  schema: ""
             413: 
               body: 
                 application/xml: 
                   schema: overLimit
                 application/json: 
-                  schema: ""
             503: 
               body: 
                 application/xml: 
                   schema: serviceUnavailable
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
       /projects: 
         get: 
           is: [ xAuthToken ]
@@ -3536,43 +3094,36 @@ traits:
                 application/xml: 
                   schema: badRequest
                 application/json: 
-                  schema: ""
             401: 
               body: 
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             403: 
               body: 
                 application/xml: 
                   schema: forbidden
                 application/json: 
-                  schema: ""
             405: 
               body: 
                 application/xml: 
                   schema: badMethod
                 application/json: 
-                  schema: ""
             413: 
               body: 
                 application/xml: 
                   schema: overLimit
                 application/json: 
-                  schema: ""
             503: 
               body: 
                 application/xml: 
                   schema: serviceUnavailable
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
       /roles: 
 documentation: 
   - title: Headline

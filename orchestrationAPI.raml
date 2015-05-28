@@ -39,9 +39,9 @@ schemas:
   - stackUpdate: !include schemas/stackUpdate-schema.json
   - templateValidateReq: !include schemas/templateValidateReq-schema.json
   - templateValidateResp: !include schemas/templateValidateResp-schema.json
-  - sanapshotStackReq: !include /schemas/sanapshotStackReq-schema.json
-  - snapshotStackRes: !include /schemas/snapshotStackRes-schema.json
-  - listSnapshots: !include /schemas/listSnapshots-schema.json
+  - sanapshotStackReq: !include schemas/sanapshotStackReq-schema.json
+  - snapshotStackRes: !include schemas/snapshotStackRes-schema.json
+  - listSnapshots: !include schemas/listSnapshots-schema.json
   - neutronVersionsResponse: !include schemas/neutronVersionsResponse-schema.xsd
 resourceTypes:
   - apiVersions: !include resourceTypes/apiVersions.raml
@@ -65,7 +65,6 @@ resourceTypes:
           200: 
             body: 
               application/json: 
-                schema: ""
       /{type_name}: 
         get: 
           description: Show resource schema
@@ -82,7 +81,6 @@ resourceTypes:
               200: 
                 body: 
                   application/json: 
-                    schema: ""
     /services: 
       get: 
         description: Show orchestration engine status
@@ -96,11 +94,9 @@ resourceTypes:
             description: When you get a 503 status code, run the heat-manage service list command or contact your cloud provider to find out why the heat engines are down.
             body: 
               application/text: 
-                schema: ""
           403: 
             body: 
               application/text: 
-                schema: ""
     /software_configs: 
       post: 
         description: Create configuration
@@ -296,7 +292,6 @@ resourceTypes:
                 201: 
                   body: 
                     application/json: 
-                      schema: ""
           /events: 
             get: 
               description: List stack events
@@ -338,7 +333,6 @@ resourceTypes:
                 200: 
                   body: 
                     application/json: 
-                      schema: ""
             /{resource_name}: 
               get: 
                 description: Show resource data
@@ -346,7 +340,6 @@ resourceTypes:
                   200: 
                     body: 
                       application/json: 
-                        schema: ""
               /events: 
                 get: 
                   description: List resource events
@@ -384,7 +377,6 @@ resourceTypes:
                       200: 
                         body: 
                           application/json: 
-                            schema: ""
               /metadata: 
                 get: 
                   description: Show resource metadata
@@ -444,7 +436,6 @@ resourceTypes:
                 200: 
                   body: 
                     application/json: 
-                      schema: ""
     /validate: 
       post: 
         description: Validate template

@@ -24,20 +24,20 @@ schemas:
   - resize: !include schemas/resize-schema.xsd
   - user: !include schemas/user-schema.xsd
   - instanceFault: !include schemas/instanceFault-schema.xsd
-  - dbVersionsResponse: !include /schemas/dbVersionsResponse-schema.json
-  - dbVersionResponse: !include /schemas/dbVersionResponse-schema.json
-  - dbCreateInstanceRequest: !include /schemas/dbCreateInstanceRequest-schema.json
-  - dbCreateInstanceResponse: !include /schemas/dbCreateInstanceResponse-schema.json
-  - listDatabaseInstancesResponse: !include /schemas/listDatabaseInstancesResponse-schema.json
-  - dbInstanceDetails: !include /schemas/dbInstanceDetails-schema.json
-  - enableRootUser: !include /schemas/enableRootUser-schema.json
-  - rootEnabledStatus: !include /schemas/rootEnabledStatus-schema.json
-  - createDatabaseRequest: !include /schemas/createDatabaseRequest-schema.json
-  - listInstanceDatabasesResponse: !include /schemas/listInstanceDatabasesResponse-schema.json
-  - createUserRequest: !include /schemas/createUserRequest-schema.json
-  - databaseInstanceUsersResponse: !include /schemas/databaseInstanceUsersResponse-schema.json
-  - listFlavorsResponse: !include /schemas/listFlavorsResponse-schema.json
-  - flavorDetailsResponse: !include /schemas/flavorDetailsResponse-schema.json
+  - dbVersionsResponse: !include schemas/dbVersionsResponse-schema.json
+  - dbVersionResponse: !include schemas/dbVersionResponse-schema.json
+  - dbCreateInstanceRequest: !include schemas/dbCreateInstanceRequest-schema.json
+  - dbCreateInstanceResponse: !include schemas/dbCreateInstanceResponse-schema.json
+  - listDatabaseInstancesResponse: !include schemas/listDatabaseInstancesResponse-schema.json
+  - dbInstanceDetails: !include schemas/dbInstanceDetails-schema.json
+  - enableRootUser: !include schemas/enableRootUser-schema.json
+  - rootEnabledStatus: !include schemas/rootEnabledStatus-schema.json
+  - createDatabaseRequest: !include schemas/createDatabaseRequest-schema.json
+  - listInstanceDatabasesResponse: !include schemas/listInstanceDatabasesResponse-schema.json
+  - createUserRequest: !include schemas/createUserRequest-schema.json
+  - databaseInstanceUsersResponse: !include schemas/databaseInstanceUsersResponse-schema.json
+  - listFlavorsResponse: !include schemas/listFlavorsResponse-schema.json
+  - flavorDetailsResponse: !include schemas/flavorDetailsResponse-schema.json
 resourceTypes:
   - flavorsList: !include resourceTypes/flavorsList.raml
   - updatedVersions: !include resourceTypes/updatedVersions.raml
@@ -57,61 +57,51 @@ resourceTypes:
           application/xml: 
             schema: badRequest
           application/json: 
-            schema: ""
       401: 
         body: 
           application/xml: 
             schema: unauthorized
           application/json: 
-            schema: ""
       403: 
         body: 
           application/xml: 
             schema: forbidden
           application/json: 
-            schema: ""
       405: 
         body: 
           application/xml: 
             schema: badMethod
           application/json: 
-            schema: ""
       413: 
         body: 
           application/xml: 
             schema: overLimit
           application/json: 
-            schema: ""
       422: 
         body: 
           application/xml: 
             schema: unprocessableEntity
           application/json: 
-            schema: ""
       500: 
         body: 
           application/xml: 
             schema: instanceFault
           application/json: 
-            schema: ""
       501: 
         body: 
           application/xml: 
             schema: notImplemented
           application/json: 
-            schema: ""
       503: 
         body: 
           application/xml: 
             schema: serviceUnavailable
           application/json: 
-            schema: ""
       404: 
         body: 
           application/xml: 
             schema: itemNotFound
           application/json: 
-            schema: ""
   /{accountId}: 
     /flavors: 
       type: flavorsList
@@ -129,61 +119,51 @@ resourceTypes:
                 application/xml: 
                   schema: badRequest
                 application/json: 
-                  schema: ""
             401: 
               body: 
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             403: 
               body: 
                 application/xml: 
                   schema: forbidden
                 application/json: 
-                  schema: ""
             405: 
               body: 
                 application/xml: 
                   schema: badMethod
                 application/json: 
-                  schema: ""
             413: 
               body: 
                 application/xml: 
                   schema: overLimit
                 application/json: 
-                  schema: ""
             422: 
               body: 
                 application/xml: 
                   schema: unprocessableEntity
                 application/json: 
-                  schema: ""
             500: 
               body: 
                 application/xml: 
                   schema: instanceFault
                 application/json: 
-                  schema: ""
             501: 
               body: 
                 application/xml: 
                   schema: notImplemented
                 application/json: 
-                  schema: ""
             503: 
               body: 
                 application/xml: 
                   schema: serviceUnavailable
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
     /instances: 
       post: 
         description: Create database instance
@@ -202,61 +182,51 @@ resourceTypes:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           422: 
             body: 
               application/xml: 
                 schema: unprocessableEntity
               application/json: 
-                schema: ""
           500: 
             body: 
               application/xml: 
                 schema: instanceFault
               application/json: 
-                schema: ""
           501: 
             body: 
               application/xml: 
                 schema: notImplemented
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       get: 
         description: List database instances
         responses: 
@@ -270,61 +240,51 @@ resourceTypes:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           405: 
             body: 
               application/xml: 
                 schema: badMethod
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           422: 
             body: 
               application/xml: 
                 schema: unprocessableEntity
               application/json: 
-                schema: ""
           500: 
             body: 
               application/xml: 
                 schema: instanceFault
               application/json: 
-                schema: ""
           501: 
             body: 
               application/xml: 
                 schema: notImplemented
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       /{instanceId}: 
         uriParameters: 
           instanceId: 
@@ -344,61 +304,51 @@ resourceTypes:
                 application/xml: 
                   schema: badRequest
                 application/json: 
-                  schema: ""
             401: 
               body: 
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             403: 
               body: 
                 application/xml: 
                   schema: forbidden
                 application/json: 
-                  schema: ""
             405: 
               body: 
                 application/xml: 
                   schema: badMethod
                 application/json: 
-                  schema: ""
             413: 
               body: 
                 application/xml: 
                   schema: overLimit
                 application/json: 
-                  schema: ""
             422: 
               body: 
                 application/xml: 
                   schema: unprocessableEntity
                 application/json: 
-                  schema: ""
             500: 
               body: 
                 application/xml: 
                   schema: instanceFault
                 application/json: 
-                  schema: ""
             501: 
               body: 
                 application/xml: 
                   schema: notImplemented
                 application/json: 
-                  schema: ""
             503: 
               body: 
                 application/xml: 
                   schema: serviceUnavailable
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
         delete: 
           description: Delete database instance
           responses: 
@@ -408,61 +358,51 @@ resourceTypes:
                 application/xml: 
                   schema: badRequest
                 application/json: 
-                  schema: ""
             401: 
               body: 
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             403: 
               body: 
                 application/xml: 
                   schema: forbidden
                 application/json: 
-                  schema: ""
             405: 
               body: 
                 application/xml: 
                   schema: badMethod
                 application/json: 
-                  schema: ""
             413: 
               body: 
                 application/xml: 
                   schema: overLimit
                 application/json: 
-                  schema: ""
             422: 
               body: 
                 application/xml: 
                   schema: unprocessableEntity
                 application/json: 
-                  schema: ""
             500: 
               body: 
                 application/xml: 
                   schema: instanceFault
                 application/json: 
-                  schema: ""
             501: 
               body: 
                 application/xml: 
                   schema: notImplemented
                 application/json: 
-                  schema: ""
             503: 
               body: 
                 application/xml: 
                   schema: serviceUnavailable
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
         /action: 
           post: 
             description: Restart instance
@@ -477,67 +417,56 @@ resourceTypes:
                   application/xml: 
                     schema: badRequest
                   application/json: 
-                    schema: ""
               401: 
                 body: 
                   application/xml: 
                     schema: unauthorized
                   application/json: 
-                    schema: ""
               403: 
                 body: 
                   application/xml: 
                     schema: forbidden
                   application/json: 
-                    schema: ""
               405: 
                 body: 
                   application/xml: 
                     schema: badMethod
                   application/json: 
-                    schema: ""
               413: 
                 body: 
                   application/xml: 
                     schema: overLimit
                   application/json: 
-                    schema: ""
               422: 
                 body: 
                   application/xml: 
                     schema: unprocessableEntity
                   application/json: 
-                    schema: ""
               500: 
                 body: 
                   application/xml: 
                     schema: instanceFault
                   application/json: 
-                    schema: ""
               501: 
                 body: 
                   application/xml: 
                     schema: notImplemented
                   application/json: 
-                    schema: ""
               503: 
                 body: 
                   application/xml: 
                     schema: serviceUnavailable
                   application/json: 
-                    schema: ""
               404: 
                 body: 
                   application/xml: 
                     schema: itemNotFound
                   application/json: 
-                    schema: ""
               415: 
                 body: 
                   application/xml: 
                     schema: badMediaType
                   application/json: 
-                    schema: ""
         /databases: 
           post: 
             description: Create database
@@ -552,61 +481,51 @@ resourceTypes:
                   application/xml: 
                     schema: badRequest
                   application/json: 
-                    schema: ""
               401: 
                 body: 
                   application/xml: 
                     schema: unauthorized
                   application/json: 
-                    schema: ""
               403: 
                 body: 
                   application/xml: 
                     schema: forbidden
                   application/json: 
-                    schema: ""
               405: 
                 body: 
                   application/xml: 
                     schema: badMethod
                   application/json: 
-                    schema: ""
               413: 
                 body: 
                   application/xml: 
                     schema: overLimit
                   application/json: 
-                    schema: ""
               422: 
                 body: 
                   application/xml: 
                     schema: unprocessableEntity
                   application/json: 
-                    schema: ""
               500: 
                 body: 
                   application/xml: 
                     schema: instanceFault
                   application/json: 
-                    schema: ""
               501: 
                 body: 
                   application/xml: 
                     schema: notImplemented
                   application/json: 
-                    schema: ""
               503: 
                 body: 
                   application/xml: 
                     schema: serviceUnavailable
                   application/json: 
-                    schema: ""
               404: 
                 body: 
                   application/xml: 
                     schema: itemNotFound
                   application/json: 
-                    schema: ""
           get: 
             description: List instance databases
             responses: 
@@ -620,61 +539,51 @@ resourceTypes:
                   application/xml: 
                     schema: badRequest
                   application/json: 
-                    schema: ""
               401: 
                 body: 
                   application/xml: 
                     schema: unauthorized
                   application/json: 
-                    schema: ""
               403: 
                 body: 
                   application/xml: 
                     schema: forbidden
                   application/json: 
-                    schema: ""
               405: 
                 body: 
                   application/xml: 
                     schema: badMethod
                   application/json: 
-                    schema: ""
               413: 
                 body: 
                   application/xml: 
                     schema: overLimit
                   application/json: 
-                    schema: ""
               422: 
                 body: 
                   application/xml: 
                     schema: unprocessableEntity
                   application/json: 
-                    schema: ""
               500: 
                 body: 
                   application/xml: 
                     schema: instanceFault
                   application/json: 
-                    schema: ""
               501: 
                 body: 
                   application/xml: 
                     schema: notImplemented
                   application/json: 
-                    schema: ""
               503: 
                 body: 
                   application/xml: 
                     schema: serviceUnavailable
                   application/json: 
-                    schema: ""
               404: 
                 body: 
                   application/xml: 
                     schema: itemNotFound
                   application/json: 
-                    schema: ""
           /{databaseName}: 
             delete: 
               description: Delete database
@@ -685,61 +594,51 @@ resourceTypes:
                     application/xml: 
                       schema: badRequest
                     application/json: 
-                      schema: ""
                 401: 
                   body: 
                     application/xml: 
                       schema: unauthorized
                     application/json: 
-                      schema: ""
                 403: 
                   body: 
                     application/xml: 
                       schema: forbidden
                     application/json: 
-                      schema: ""
                 405: 
                   body: 
                     application/xml: 
                       schema: badMethod
                     application/json: 
-                      schema: ""
                 413: 
                   body: 
                     application/xml: 
                       schema: overLimit
                     application/json: 
-                      schema: ""
                 422: 
                   body: 
                     application/xml: 
                       schema: unprocessableEntity
                     application/json: 
-                      schema: ""
                 500: 
                   body: 
                     application/xml: 
                       schema: instanceFault
                     application/json: 
-                      schema: ""
                 501: 
                   body: 
                     application/xml: 
                       schema: notImplemented
                     application/json: 
-                      schema: ""
                 503: 
                   body: 
                     application/xml: 
                       schema: serviceUnavailable
                     application/json: 
-                      schema: ""
                 404: 
                   body: 
                     application/xml: 
                       schema: itemNotFound
                     application/json: 
-                      schema: ""
         /root: 
           post: 
             description: Enable root user
@@ -754,61 +653,51 @@ resourceTypes:
                   application/xml: 
                     schema: badRequest
                   application/json: 
-                    schema: ""
               401: 
                 body: 
                   application/xml: 
                     schema: unauthorized
                   application/json: 
-                    schema: ""
               403: 
                 body: 
                   application/xml: 
                     schema: forbidden
                   application/json: 
-                    schema: ""
               405: 
                 body: 
                   application/xml: 
                     schema: badMethod
                   application/json: 
-                    schema: ""
               413: 
                 body: 
                   application/xml: 
                     schema: overLimit
                   application/json: 
-                    schema: ""
               422: 
                 body: 
                   application/xml: 
                     schema: unprocessableEntity
                   application/json: 
-                    schema: ""
               500: 
                 body: 
                   application/xml: 
                     schema: instanceFault
                   application/json: 
-                    schema: ""
               501: 
                 body: 
                   application/xml: 
                     schema: notImplemented
                   application/json: 
-                    schema: ""
               503: 
                 body: 
                   application/xml: 
                     schema: serviceUnavailable
                   application/json: 
-                    schema: ""
               404: 
                 body: 
                   application/xml: 
                     schema: itemNotFound
                   application/json: 
-                    schema: ""
           get: 
             description: Show root-enabled status for database instance
             responses: 
@@ -822,61 +711,51 @@ resourceTypes:
                   application/xml: 
                     schema: badRequest
                   application/json: 
-                    schema: ""
               401: 
                 body: 
                   application/xml: 
                     schema: unauthorized
                   application/json: 
-                    schema: ""
               403: 
                 body: 
                   application/xml: 
                     schema: forbidden
                   application/json: 
-                    schema: ""
               405: 
                 body: 
                   application/xml: 
                     schema: badMethod
                   application/json: 
-                    schema: ""
               413: 
                 body: 
                   application/xml: 
                     schema: overLimit
                   application/json: 
-                    schema: ""
               422: 
                 body: 
                   application/xml: 
                     schema: unprocessableEntity
                   application/json: 
-                    schema: ""
               500: 
                 body: 
                   application/xml: 
                     schema: instanceFault
                   application/json: 
-                    schema: ""
               501: 
                 body: 
                   application/xml: 
                     schema: notImplemented
                   application/json: 
-                    schema: ""
               503: 
                 body: 
                   application/xml: 
                     schema: serviceUnavailable
                   application/json: 
-                    schema: ""
               404: 
                 body: 
                   application/xml: 
                     schema: itemNotFound
                   application/json: 
-                    schema: ""
         /users: 
           post: 
             description: Create user
@@ -891,61 +770,51 @@ resourceTypes:
                   application/xml: 
                     schema: badRequest
                   application/json: 
-                    schema: ""
               401: 
                 body: 
                   application/xml: 
                     schema: unauthorized
                   application/json: 
-                    schema: ""
               403: 
                 body: 
                   application/xml: 
                     schema: forbidden
                   application/json: 
-                    schema: ""
               405: 
                 body: 
                   application/xml: 
                     schema: badMethod
                   application/json: 
-                    schema: ""
               413: 
                 body: 
                   application/xml: 
                     schema: overLimit
                   application/json: 
-                    schema: ""
               422: 
                 body: 
                   application/xml: 
                     schema: unprocessableEntity
                   application/json: 
-                    schema: ""
               500: 
                 body: 
                   application/xml: 
                     schema: instanceFault
                   application/json: 
-                    schema: ""
               501: 
                 body: 
                   application/xml: 
                     schema: notImplemented
                   application/json: 
-                    schema: ""
               503: 
                 body: 
                   application/xml: 
                     schema: serviceUnavailable
                   application/json: 
-                    schema: ""
               404: 
                 body: 
                   application/xml: 
                     schema: itemNotFound
                   application/json: 
-                    schema: ""
           get: 
             description: List database instance users
             responses: 
@@ -959,61 +828,51 @@ resourceTypes:
                   application/xml: 
                     schema: badRequest
                   application/json: 
-                    schema: ""
               401: 
                 body: 
                   application/xml: 
                     schema: unauthorized
                   application/json: 
-                    schema: ""
               403: 
                 body: 
                   application/xml: 
                     schema: forbidden
                   application/json: 
-                    schema: ""
               405: 
                 body: 
                   application/xml: 
                     schema: badMethod
                   application/json: 
-                    schema: ""
               413: 
                 body: 
                   application/xml: 
                     schema: overLimit
                   application/json: 
-                    schema: ""
               422: 
                 body: 
                   application/xml: 
                     schema: unprocessableEntity
                   application/json: 
-                    schema: ""
               500: 
                 body: 
                   application/xml: 
                     schema: instanceFault
                   application/json: 
-                    schema: ""
               501: 
                 body: 
                   application/xml: 
                     schema: notImplemented
                   application/json: 
-                    schema: ""
               503: 
                 body: 
                   application/xml: 
                     schema: serviceUnavailable
                   application/json: 
-                    schema: ""
               404: 
                 body: 
                   application/xml: 
                     schema: itemNotFound
                   application/json: 
-                    schema: ""
           /{name}: 
             delete: 
               description: Delete user
@@ -1024,61 +883,51 @@ resourceTypes:
                     application/xml: 
                       schema: badRequest
                     application/json: 
-                      schema: ""
                 401: 
                   body: 
                     application/xml: 
                       schema: unauthorized
                     application/json: 
-                      schema: ""
                 403: 
                   body: 
                     application/xml: 
                       schema: forbidden
                     application/json: 
-                      schema: ""
                 405: 
                   body: 
                     application/xml: 
                       schema: badMethod
                     application/json: 
-                      schema: ""
                 413: 
                   body: 
                     application/xml: 
                       schema: overLimit
                     application/json: 
-                      schema: ""
                 422: 
                   body: 
                     application/xml: 
                       schema: unprocessableEntity
                     application/json: 
-                      schema: ""
                 500: 
                   body: 
                     application/xml: 
                       schema: instanceFault
                     application/json: 
-                      schema: ""
                 501: 
                   body: 
                     application/xml: 
                       schema: notImplemented
                     application/json: 
-                      schema: ""
                 503: 
                   body: 
                     application/xml: 
                       schema: serviceUnavailable
                     application/json: 
-                      schema: ""
                 404: 
                   body: 
                     application/xml: 
                       schema: itemNotFound
                     application/json: 
-                      schema: ""
 documentation: 
   - title: Headline
     content: !include docs/databasesAPI/headline.md

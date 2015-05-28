@@ -192,32 +192,32 @@ schemas:
   - subnetUpdateRespXML: !include schemas/subnetUpdateResp-schema.xsd
   - versionV2NeutronGetRespXML: !include schemas/versionV2NeutronGetResp-schema.xsd
   - portCreateOrUpdateReq: !include schemas/portCreateOrUpdateReq-schema.json
-  - showAPIDetailsXML: !include /schemas/showAPIDetailsXML-schema.xsd
-  - showAPIDetails: !include /schemas/showAPIDetails-schema.json
-  - listExtensionsResXML: !include /schemas/listExtensionsResXML-schema.xsd
-  - listExtensionsRes: !include /schemas/listExtensionsRes-schema.json
-  - extensionDetailsXML: !include /schemas/extensionDetailsXML-schema.xsd
-  - extensionDetails: !include /schemas/extensionDetails-schema.json
-  - listVIPs: !include /schemas/listVIPs-schema.json
-  - createLoadBalancerVIPReq: !include /schemas/createLoadBalancerVIPReq-schema.json
-  - createLoadBalancerVIPRes: !include /schemas/createLoadBalancerVIPRes-schema.json
-  - showVIPDetailsRes: !include /schemas/showVIPDetailsRes-schema.json
-  - updateVIPReq: !include /schemas/updateVIPReq-schema.json
-  - updateVIPRes: !include /schemas/updateVIPRes-schema.json
-  - hmListRes: !include /schemas/hmListRes-schema.json
-  - createLoadBalancerReq: !include /schemas/createLoadBalancerReq-schema.json
-  - createLoadBalancerRes: !include /schemas/createLoadBalancerRes-schema.json
-  - showHealthMonitorDetails: !include /schemas/showHealthMonitorDetails-schema.json
-  - updateHealthMonitor: !include /schemas/updateHealthMonitor-schema.json
-  - updateHealthMonitorRes: !include /schemas/updateHealthMonitorRes-schema.json
-  - listPoolsRes: !include /schemas/listPoolsRes-schema.json
-  - createLoadBalancerPoolReq: !include /schemas/createLoadBalancerPoolReq-schema.json
-  - createLoadBalancerPoolRes: !include /schemas/createLoadBalancerPoolRes-schema.json
-  - showPoolDetailsRes: !include /schemas/showPoolDetailsRes-schema.json
-  - updateSinglePoolRes: !include /schemas/updateSinglePoolRes-schema.json
-  - updateSinglePool: !include /schemas/updateSinglePool-schema.json
-  - associateHealthMonitorWithPoolReq: !include /schemas/associateHealthMonitorWithPoolReq-schema.json
-  - associateHealthMonitorWithPoolRes: !include /schemas/associateHealthMonitorWithPoolRes-schema.json
+  - showAPIDetailsXML: !include schemas/showAPIDetailsXML-schema.xsd
+  - showAPIDetails: !include schemas/showAPIDetails-schema.json
+  - listExtensionsResXML: !include schemas/listExtensionsResXML-schema.xsd
+  - listExtensionsRes: !include schemas/listExtensionsRes-schema.json
+  - extensionDetailsXML: !include schemas/extensionDetailsXML-schema.xsd
+  - extensionDetails: !include schemas/extensionDetails-schema.json
+  - listVIPs: !include schemas/listVIPs-schema.json
+  - createLoadBalancerVIPReq: !include schemas/createLoadBalancerVIPReq-schema.json
+  - createLoadBalancerVIPRes: !include schemas/createLoadBalancerVIPRes-schema.json
+  - showVIPDetailsRes: !include schemas/showVIPDetailsRes-schema.json
+  - updateVIPReq: !include schemas/updateVIPReq-schema.json
+  - updateVIPRes: !include schemas/updateVIPRes-schema.json
+  - hmListRes: !include schemas/hmListRes-schema.json
+  - createLoadBalancerReq: !include schemas/createLoadBalancerReq-schema.json
+  - createLoadBalancerRes: !include schemas/createLoadBalancerRes-schema.json
+  - showHealthMonitorDetails: !include schemas/showHealthMonitorDetails-schema.json
+  - updateHealthMonitor: !include schemas/updateHealthMonitor-schema.json
+  - updateHealthMonitorRes: !include schemas/updateHealthMonitorRes-schema.json
+  - listPoolsRes: !include schemas/listPoolsRes-schema.json
+  - createLoadBalancerPoolReq: !include schemas/createLoadBalancerPoolReq-schema.json
+  - createLoadBalancerPoolRes: !include schemas/createLoadBalancerPoolRes-schema.json
+  - showPoolDetailsRes: !include schemas/showPoolDetailsRes-schema.json
+  - updateSinglePoolRes: !include schemas/updateSinglePoolRes-schema.json
+  - updateSinglePool: !include schemas/updateSinglePool-schema.json
+  - associateHealthMonitorWithPoolReq: !include schemas/associateHealthMonitorWithPoolReq-schema.json
+  - associateHealthMonitorWithPoolRes: !include schemas/associateHealthMonitorWithPoolRes-schema.json
 resourceTypes:
   - extension: !include resourceTypes/extension.raml
   - apiVersions: !include resourceTypes/apiVersions.raml
@@ -258,19 +258,16 @@ resourceTypes:
             application/xml: 
               schema: badRequest
             application/json: 
-              schema: ""
         401: 
           body: 
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
         409: 
           body: 
             application/xml: 
               schema: conflict
             application/json: 
-              schema: ""
     get: 
       description: List floating IPs
       responses: 
@@ -284,7 +281,6 @@ resourceTypes:
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
     /{floatingip_id}: 
       get: 
         description: Show floating IP details
@@ -299,19 +295,16 @@ resourceTypes:
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       put: 
         description: Update floating IP
         body: 
@@ -329,25 +322,21 @@ resourceTypes:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
           409: 
             body: 
               application/xml: 
                 schema: conflict
               application/json: 
-                schema: ""
       delete: 
         description: Delete floating IP
         responses: 
@@ -357,13 +346,11 @@ resourceTypes:
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
   /lb: 
     /members: 
       get: 
@@ -379,13 +366,11 @@ resourceTypes:
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
       post: 
         description: Create a load balancer member
         body: 
@@ -403,13 +388,11 @@ resourceTypes:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
       /{member_id}: 
         get: 
           description: Show member details
@@ -424,19 +407,16 @@ resourceTypes:
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             403: 
               body: 
                 application/xml: 
                   schema: forbidden
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
         put: 
           description: Update member
           body: 
@@ -454,25 +434,21 @@ resourceTypes:
                 application/xml: 
                   schema: badRequest
                 application/json: 
-                  schema: ""
             401: 
               body: 
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             403: 
               body: 
                 application/xml: 
                   schema: forbidden
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
         delete: 
           description: Delete member
           responses: 
@@ -482,19 +458,16 @@ resourceTypes:
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
             409: 
               body: 
                 application/xml: 
                   schema: conflict
                 application/json: 
-                  schema: ""
     /vips: 
       get: 
         description: List VIPs
@@ -669,37 +642,31 @@ resourceTypes:
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
           409: 
             body: 
               application/xml: 
                 schema: conflict
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           500: 
             body: 
               application/xml: 
                 schema: Internal-server-error
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
       get: 
         description: List health monitors
         responses: 
@@ -713,19 +680,16 @@ resourceTypes:
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           500: 
             body: 
               application/xml: 
                 schema: Internal-server-error
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
       /{health_monitor_id}: 
         get: 
           description: Show health monitor details
@@ -740,43 +704,36 @@ resourceTypes:
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             403: 
               body: 
                 application/xml: 
                   schema: forbidden
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
             409: 
               body: 
                 application/xml: 
                   schema: conflict
                 application/json: 
-                  schema: ""
             413: 
               body: 
                 application/xml: 
                   schema: overLimit
                 application/json: 
-                  schema: ""
             500: 
               body: 
                 application/xml: 
                   schema: Internal-server-error
                 application/json: 
-                  schema: ""
             503: 
               body: 
                 application/xml: 
                   schema: serviceUnavailable
                 application/json: 
-                  schema: ""
         put: 
           description: Update health monitor
           body: 
@@ -794,31 +751,26 @@ resourceTypes:
                 application/xml: 
                   schema: Internal-server-error
                 application/json: 
-                  schema: ""
             503: 
               body: 
                 application/xml: 
                   schema: serviceUnavailable
                 application/json: 
-                  schema: ""
             401: 
               body: 
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             400: 
               body: 
                 application/xml: 
                   schema: badRequest
                 application/json: 
-                  schema: ""
             413: 
               body: 
                 application/xml: 
                   schema: overLimit
                 application/json: 
-                  schema: ""
         delete: 
           description: Remove health monitor
           responses: 
@@ -828,37 +780,31 @@ resourceTypes:
                 application/xml: 
                   schema: Internal-server-error
                 application/json: 
-                  schema: ""
             503: 
               body: 
                 application/xml: 
                   schema: serviceUnavailable
                 application/json: 
-                  schema: ""
             401: 
               body: 
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             400: 
               body: 
                 application/xml: 
                   schema: badRequest
                 application/json: 
-                  schema: ""
             409: 
               body: 
                 application/xml: 
                   schema: conflict
                 application/json: 
-                  schema: ""
             413: 
               body: 
                 application/xml: 
                   schema: overLimit
                 application/json: 
-                  schema: ""
     /listeners: 
       get: 
         description: List listeners
@@ -873,19 +819,16 @@ resourceTypes:
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
           500: 
             body: 
               application/xml: 
                 schema: Internal-server-error
               application/json: 
-                schema: ""
       post: 
         description: Create listener
         body: 
@@ -903,37 +846,31 @@ resourceTypes:
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           409: 
             body: 
               application/xml: 
                 schema: conflict
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           500: 
             body: 
               application/xml: 
                 schema: Internal-server-error
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
       /{listener_id}: 
         get: 
           description: Show listener details
@@ -948,43 +885,36 @@ resourceTypes:
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             403: 
               body: 
                 application/xml: 
                   schema: forbidden
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
             409: 
               body: 
                 application/xml: 
                   schema: conflict
                 application/json: 
-                  schema: ""
             413: 
               body: 
                 application/xml: 
                   schema: overLimit
                 application/json: 
-                  schema: ""
             500: 
               body: 
                 application/xml: 
                   schema: Internal-server-error
                 application/json: 
-                  schema: ""
             503: 
               body: 
                 application/xml: 
                   schema: serviceUnavailable
                 application/json: 
-                  schema: ""
         put: 
           description: Update listener
           body: 
@@ -1002,31 +932,26 @@ resourceTypes:
                 application/xml: 
                   schema: Internal-server-error
                 application/json: 
-                  schema: ""
             503: 
               body: 
                 application/xml: 
                   schema: serviceUnavailable
                 application/json: 
-                  schema: ""
             401: 
               body: 
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             400: 
               body: 
                 application/xml: 
                   schema: badRequest
                 application/json: 
-                  schema: ""
             413: 
               body: 
                 application/xml: 
                   schema: overLimit
                 application/json: 
-                  schema: ""
         delete: 
           description: Remove listener
           responses: 
@@ -1036,37 +961,31 @@ resourceTypes:
                 application/xml: 
                   schema: Internal-server-error
                 application/json: 
-                  schema: ""
             503: 
               body: 
                 application/xml: 
                   schema: serviceUnavailable
                 application/json: 
-                  schema: ""
             401: 
               body: 
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             400: 
               body: 
                 application/xml: 
                   schema: badRequest
                 application/json: 
-                  schema: ""
             409: 
               body: 
                 application/xml: 
                   schema: conflict
                 application/json: 
-                  schema: ""
             413: 
               body: 
                 application/xml: 
                   schema: overLimit
                 application/json: 
-                  schema: ""
     /loadbalancers: 
       get: 
         description: List load balancers
@@ -1081,19 +1000,16 @@ resourceTypes:
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           500: 
             body: 
               application/xml: 
                 schema: Internal-server-error
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
       post: 
         description: Create load balancer
         body: 
@@ -1111,37 +1027,31 @@ resourceTypes:
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
           409: 
             body: 
               application/xml: 
                 schema: conflict
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           500: 
             body: 
               application/xml: 
                 schema: Internal-server-error
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
       /{loadbalancer_id}: 
         get: 
           description: Show load balancer details
@@ -1156,37 +1066,31 @@ resourceTypes:
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             403: 
               body: 
                 application/xml: 
                   schema: forbidden
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
             413: 
               body: 
                 application/xml: 
                   schema: overLimit
                 application/json: 
-                  schema: ""
             500: 
               body: 
                 application/xml: 
                   schema: Internal-server-error
                 application/json: 
-                  schema: ""
             503: 
               body: 
                 application/xml: 
                   schema: serviceUnavailable
                 application/json: 
-                  schema: ""
         put: 
           description: Update load balancer
           body: 
@@ -1204,31 +1108,26 @@ resourceTypes:
                 application/xml: 
                   schema: Internal-server-error
                 application/json: 
-                  schema: ""
             503: 
               body: 
                 application/xml: 
                   schema: serviceUnavailable
                 application/json: 
-                  schema: ""
             400: 
               body: 
                 application/xml: 
                   schema: badRequest
                 application/json: 
-                  schema: ""
             401: 
               body: 
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             413: 
               body: 
                 application/xml: 
                   schema: overLimit
                 application/json: 
-                  schema: ""
         delete: 
           description: Remove load balancer
           responses: 
@@ -1238,19 +1137,16 @@ resourceTypes:
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
             409: 
               body: 
                 application/xml: 
                   schema: conflict
                 application/json: 
-                  schema: ""
     /pools: 
       get: 
         description: List pools
@@ -1265,19 +1161,16 @@ resourceTypes:
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           500: 
             body: 
               application/xml: 
                 schema: Internal-server-error
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
       post: 
         description: Create pool
         body: 
@@ -1295,37 +1188,31 @@ resourceTypes:
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
           409: 
             body: 
               application/xml: 
                 schema: conflict
               application/json: 
-                schema: ""
           413: 
             body: 
               application/xml: 
                 schema: overLimit
               application/json: 
-                schema: ""
           500: 
             body: 
               application/xml: 
                 schema: Internal-server-error
               application/json: 
-                schema: ""
           503: 
             body: 
               application/xml: 
                 schema: serviceUnavailable
               application/json: 
-                schema: ""
       /{pool_id}: 
         get: 
           description: Show pool details
@@ -1340,43 +1227,36 @@ resourceTypes:
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             403: 
               body: 
                 application/xml: 
                   schema: forbidden
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
             409: 
               body: 
                 application/xml: 
                   schema: conflict
                 application/json: 
-                  schema: ""
             413: 
               body: 
                 application/xml: 
                   schema: overLimit
                 application/json: 
-                  schema: ""
             500: 
               body: 
                 application/xml: 
                   schema: Internal-server-error
                 application/json: 
-                  schema: ""
             503: 
               body: 
                 application/xml: 
                   schema: serviceUnavailable
                 application/json: 
-                  schema: ""
         put: 
           description: Update pool
           body: 
@@ -1394,31 +1274,26 @@ resourceTypes:
                 application/xml: 
                   schema: Internal-server-error
                 application/json: 
-                  schema: ""
             503: 
               body: 
                 application/xml: 
                   schema: serviceUnavailable
                 application/json: 
-                  schema: ""
             401: 
               body: 
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             400: 
               body: 
                 application/xml: 
                   schema: badRequest
                 application/json: 
-                  schema: ""
             413: 
               body: 
                 application/xml: 
                   schema: overLimit
                 application/json: 
-                  schema: ""
         delete: 
           description: Remove pool
           responses: 
@@ -1428,37 +1303,31 @@ resourceTypes:
                 application/xml: 
                   schema: Internal-server-error
                 application/json: 
-                  schema: ""
             503: 
               body: 
                 application/xml: 
                   schema: serviceUnavailable
                 application/json: 
-                  schema: ""
             401: 
               body: 
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             400: 
               body: 
                 application/xml: 
                   schema: badRequest
                 application/json: 
-                  schema: ""
             409: 
               body: 
                 application/xml: 
                   schema: conflict
                 application/json: 
-                  schema: ""
             413: 
               body: 
                 application/xml: 
                   schema: overLimit
                 application/json: 
-                  schema: ""
         /members: 
           get: 
             description: List pool members
@@ -1473,19 +1342,16 @@ resourceTypes:
                   application/xml: 
                     schema: unauthorized
                   application/json: 
-                    schema: ""
               503: 
                 body: 
                   application/xml: 
                     schema: serviceUnavailable
                   application/json: 
-                    schema: ""
               500: 
                 body: 
                   application/xml: 
                     schema: Internal-server-error
                   application/json: 
-                    schema: ""
           post: 
             description: Add member to pool
             body: 
@@ -1503,37 +1369,31 @@ resourceTypes:
                   application/xml: 
                     schema: unauthorized
                   application/json: 
-                    schema: ""
               404: 
                 body: 
                   application/xml: 
                     schema: itemNotFound
                   application/json: 
-                    schema: ""
               409: 
                 body: 
                   application/xml: 
                     schema: conflict
                   application/json: 
-                    schema: ""
               413: 
                 body: 
                   application/xml: 
                     schema: overLimit
                   application/json: 
-                    schema: ""
               500: 
                 body: 
                   application/xml: 
                     schema: Internal-server-error
                   application/json: 
-                    schema: ""
               503: 
                 body: 
                   application/xml: 
                     schema: serviceUnavailable
                   application/json: 
-                    schema: ""
           /{member_id}: 
             get: 
               description: Show pool member details
@@ -1548,43 +1408,36 @@ resourceTypes:
                     application/xml: 
                       schema: unauthorized
                     application/json: 
-                      schema: ""
                 403: 
                   body: 
                     application/xml: 
                       schema: forbidden
                     application/json: 
-                      schema: ""
                 404: 
                   body: 
                     application/xml: 
                       schema: itemNotFound
                     application/json: 
-                      schema: ""
                 409: 
                   body: 
                     application/xml: 
                       schema: conflict
                     application/json: 
-                      schema: ""
                 413: 
                   body: 
                     application/xml: 
                       schema: overLimit
                     application/json: 
-                      schema: ""
                 500: 
                   body: 
                     application/xml: 
                       schema: Internal-server-error
                     application/json: 
-                      schema: ""
                 503: 
                   body: 
                     application/xml: 
                       schema: serviceUnavailable
                     application/json: 
-                      schema: ""
             put: 
               description: Update pool member
               body: 
@@ -1602,31 +1455,26 @@ resourceTypes:
                     application/xml: 
                       schema: Internal-server-error
                     application/json: 
-                      schema: ""
                 503: 
                   body: 
                     application/xml: 
                       schema: serviceUnavailable
                     application/json: 
-                      schema: ""
                 401: 
                   body: 
                     application/xml: 
                       schema: unauthorized
                     application/json: 
-                      schema: ""
                 400: 
                   body: 
                     application/xml: 
                       schema: badRequest
                     application/json: 
-                      schema: ""
                 413: 
                   body: 
                     application/xml: 
                       schema: overLimit
                     application/json: 
-                      schema: ""
             delete: 
               description: Remove member from pool
               responses: 
@@ -1636,37 +1484,31 @@ resourceTypes:
                     application/xml: 
                       schema: Internal-server-error
                     application/json: 
-                      schema: ""
                 503: 
                   body: 
                     application/xml: 
                       schema: serviceUnavailable
                     application/json: 
-                      schema: ""
                 401: 
                   body: 
                     application/xml: 
                       schema: unauthorized
                     application/json: 
-                      schema: ""
                 400: 
                   body: 
                     application/xml: 
                       schema: badRequest
                     application/json: 
-                      schema: ""
                 409: 
                   body: 
                     application/xml: 
                       schema: conflict
                     application/json: 
-                      schema: ""
                 413: 
                   body: 
                     application/xml: 
                       schema: overLimit
                     application/json: 
-                      schema: ""
   /metering: 
     /metering-label-rules: 
       get: 
@@ -1682,7 +1524,6 @@ resourceTypes:
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
       post: 
         description: Create metering label rule
         body: 
@@ -1700,25 +1541,21 @@ resourceTypes:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
           409: 
             body: 
               application/xml: 
                 schema: buildInProgress
               application/json: 
-                schema: ""
       /{metering-label-rule-id}: 
         get: 
           description: Show metering label rule
@@ -1733,13 +1570,11 @@ resourceTypes:
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
         delete: 
           description: Delete metering label rule
           responses: 
@@ -1753,13 +1588,11 @@ resourceTypes:
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
     /metering-labels: 
       get: 
         description: List metering labels
@@ -1774,7 +1607,6 @@ resourceTypes:
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
       post: 
         description: Create metering label
         body: 
@@ -1792,13 +1624,11 @@ resourceTypes:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
       /{metering_label_id}: 
         get: 
           description: Show metering label
@@ -1813,13 +1643,11 @@ resourceTypes:
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
         delete: 
           description: Delete metering label
           responses: 
@@ -1833,13 +1661,11 @@ resourceTypes:
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
   /networks: 
     get: 
       description: List networks
@@ -1875,13 +1701,11 @@ resourceTypes:
             application/xml: 
               schema: badRequest
             application/json: 
-              schema: ""
         401: 
           body: 
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
     /{network_id}: 
       get: 
         description: Show network
@@ -1899,13 +1723,11 @@ resourceTypes:
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       put: 
         description: Update network
         body: 
@@ -1929,25 +1751,21 @@ resourceTypes:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       delete: 
         description: Delete network
         responses: 
@@ -1957,19 +1775,16 @@ resourceTypes:
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
           409: 
             body: 
               application/xml: 
                 schema: conflict
               application/json: 
-                schema: ""
   /ports: 
     get: 
       description: List ports
@@ -2007,7 +1822,6 @@ resourceTypes:
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
     post: 
       description: Bulk create ports
       body: 
@@ -2031,37 +1845,31 @@ resourceTypes:
             application/xml: 
               schema: badRequest
             application/json: 
-              schema: ""
         401: 
           body: 
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
         403: 
           body: 
             application/xml: 
               schema: forbidden
             application/json: 
-              schema: ""
         404: 
           body: 
             application/xml: 
               schema: itemNotFound
             application/json: 
-              schema: ""
         409: 
           body: 
             application/xml: 
               schema: conflict
             application/json: 
-              schema: ""
         503: 
           body: 
             application/xml: 
               schema: macGenerationFailure
             application/json: 
-              schema: ""
     /{port_id}: 
       get: 
         description: Show port
@@ -2079,13 +1887,11 @@ resourceTypes:
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       put: 
         description: Update port
         body: 
@@ -2109,31 +1915,26 @@ resourceTypes:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
           409: 
             body: 
               application/xml: 
                 schema: conflict
               application/json: 
-                schema: ""
       delete: 
         description: Delete port
         responses: 
@@ -2143,19 +1944,16 @@ resourceTypes:
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
   /quotas: 
     get: 
       description: Show quota
@@ -2170,13 +1968,11 @@ resourceTypes:
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
         403: 
           body: 
             application/xml: 
               schema: forbidden
             application/json: 
-              schema: ""
     /{tenant_id}: 
       put: 
         description: Update quota
@@ -2195,13 +1991,11 @@ resourceTypes:
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
       delete: 
         description: Reset quota
         responses: 
@@ -2211,13 +2005,11 @@ resourceTypes:
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
   /routers: 
     post: 
       description: Create router
@@ -2236,13 +2028,11 @@ resourceTypes:
             application/xml: 
               schema: badRequest
             application/json: 
-              schema: ""
         401: 
           body: 
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
     get: 
       description: List routers
       responses: 
@@ -2256,7 +2046,6 @@ resourceTypes:
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
     /{router_id}: 
       get: 
         description: Show router details
@@ -2271,19 +2060,16 @@ resourceTypes:
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       put: 
         description: Update router
         body: 
@@ -2301,19 +2087,16 @@ resourceTypes:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       delete: 
         description: Delete router
         responses: 
@@ -2323,19 +2106,16 @@ resourceTypes:
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
           409: 
             body: 
               application/xml: 
                 schema: conflict
               application/json: 
-                schema: ""
       /add_router_interface: 
         put: 
           description: Add interface to router
@@ -2354,25 +2134,21 @@ resourceTypes:
                 application/xml: 
                   schema: badRequest
                 application/json: 
-                  schema: ""
             401: 
               body: 
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
             409: 
               body: 
                 application/xml: 
                   schema: conflict
                 application/json: 
-                  schema: ""
       /remove_router_interface: 
         put: 
           description: Remove interface from router
@@ -2391,25 +2167,21 @@ resourceTypes:
                 application/xml: 
                   schema: badRequest
                 application/json: 
-                  schema: ""
             401: 
               body: 
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
             409: 
               body: 
                 application/xml: 
                   schema: conflict
                 application/json: 
-                  schema: ""
   /security-group-rules: 
     get: 
       description: List security group rules
@@ -2424,7 +2196,6 @@ resourceTypes:
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
     post: 
       description: Create security group rule
       body: 
@@ -2442,25 +2213,21 @@ resourceTypes:
             application/xml: 
               schema: badRequest
             application/json: 
-              schema: ""
         401: 
           body: 
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
         404: 
           body: 
             application/xml: 
               schema: itemNotFound
             application/json: 
-              schema: ""
         409: 
           body: 
             application/xml: 
               schema: buildInProgress
             application/json: 
-              schema: ""
     /{rules-security-groups-id}: 
       get: 
         description: Show security group rule
@@ -2475,13 +2242,11 @@ resourceTypes:
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       delete: 
         description: Delete security group rule
         responses: 
@@ -2491,13 +2256,11 @@ resourceTypes:
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
   /security-groups: 
     get: 
       description: List security groups
@@ -2512,7 +2275,6 @@ resourceTypes:
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
     post: 
       description: Create security group
       body: 
@@ -2530,13 +2292,11 @@ resourceTypes:
             application/xml: 
               schema: badRequest
             application/json: 
-              schema: ""
         401: 
           body: 
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
     /{security_group_id}: 
       get: 
         description: Show security group
@@ -2557,13 +2317,11 @@ resourceTypes:
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       delete: 
         description: Delete security group
         responses: 
@@ -2577,13 +2335,11 @@ resourceTypes:
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
   /subnets: 
     get: 
       description: List subnets
@@ -2622,7 +2378,6 @@ resourceTypes:
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
     post: 
       description: Bulk create subnet
       body: 
@@ -2646,31 +2401,26 @@ resourceTypes:
             application/xml: 
               schema: badRequest
             application/json: 
-              schema: ""
         401: 
           body: 
             application/xml: 
               schema: unauthorized
             application/json: 
-              schema: ""
         403: 
           body: 
             application/xml: 
               schema: forbidden
             application/json: 
-              schema: ""
         404: 
           body: 
             application/xml: 
               schema: itemNotFound
             application/json: 
-              schema: ""
         409: 
           body: 
             application/xml: 
               schema: conflict
             application/json: 
-              schema: ""
     /{subnet_id}: 
       get: 
         description: Show subnet
@@ -2688,13 +2438,11 @@ resourceTypes:
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       put: 
         description: Update subnet
         body: 
@@ -2718,25 +2466,21 @@ resourceTypes:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
       delete: 
         description: Delete subnet
         responses: 
@@ -2746,19 +2490,16 @@ resourceTypes:
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           404: 
             body: 
               application/xml: 
                 schema: itemNotFound
               application/json: 
-                schema: ""
           409: 
             body: 
               application/xml: 
                 schema: conflict
               application/json: 
-                schema: ""
   /vpn: 
     /ikepolicies: 
       get: 
@@ -2774,13 +2515,11 @@ resourceTypes:
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
       post: 
         description: Create IKE policy
         body: 
@@ -2798,13 +2537,11 @@ resourceTypes:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
       /{ikepolicy_id}: 
         get: 
           description: Show IKE policies
@@ -2819,19 +2556,16 @@ resourceTypes:
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             403: 
               body: 
                 application/xml: 
                   schema: forbidden
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
         put: 
           description: Update IKE policy
           body: 
@@ -2849,19 +2583,16 @@ resourceTypes:
                 application/xml: 
                   schema: badRequest
                 application/json: 
-                  schema: ""
             401: 
               body: 
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
         delete: 
           description: Remove IKE policy
           responses: 
@@ -2871,19 +2602,16 @@ resourceTypes:
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
             409: 
               body: 
                 application/xml: 
                   schema: conflict
                 application/json: 
-                  schema: ""
     /ipsecpolicies: 
       get: 
         description: List IPSec policies
@@ -2898,13 +2626,11 @@ resourceTypes:
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
       post: 
         description: Create IPSec policy
         body: 
@@ -2922,13 +2648,11 @@ resourceTypes:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
       /{ipsecpolicy_id}: 
         get: 
           description: Show IPSec Policies
@@ -2943,19 +2667,16 @@ resourceTypes:
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             403: 
               body: 
                 application/xml: 
                   schema: forbidden
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
         put: 
           description: Update IPSec policy
           body: 
@@ -2973,19 +2694,16 @@ resourceTypes:
                 application/xml: 
                   schema: badRequest
                 application/json: 
-                  schema: ""
             401: 
               body: 
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
         delete: 
           description: Remove IPSec policy
           responses: 
@@ -2995,19 +2713,16 @@ resourceTypes:
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
             409: 
               body: 
                 application/xml: 
                   schema: conflict
                 application/json: 
-                  schema: ""
     /ipsecsiteconnections: 
       get: 
         description: List IPSec connections
@@ -3022,13 +2737,11 @@ resourceTypes:
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
       post: 
         description: Create IPSec connection
         body: 
@@ -3046,13 +2759,11 @@ resourceTypes:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
       /{connection_id}: 
         get: 
           description: Show IPSec connection
@@ -3067,19 +2778,16 @@ resourceTypes:
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             403: 
               body: 
                 application/xml: 
                   schema: forbidden
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
         put: 
           description: Update IPSec connection
           body: 
@@ -3097,19 +2805,16 @@ resourceTypes:
                 application/xml: 
                   schema: badRequest
                 application/json: 
-                  schema: ""
             401: 
               body: 
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
         delete: 
           description: Remove IPSec connection
           responses: 
@@ -3119,19 +2824,16 @@ resourceTypes:
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
             409: 
               body: 
                 application/xml: 
                   schema: conflict
                 application/json: 
-                  schema: ""
     /vpnservices: 
       get: 
         description: List VPN services
@@ -3146,13 +2848,11 @@ resourceTypes:
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
           403: 
             body: 
               application/xml: 
                 schema: forbidden
               application/json: 
-                schema: ""
       post: 
         description: Create VPN service
         body: 
@@ -3170,13 +2870,11 @@ resourceTypes:
               application/xml: 
                 schema: badRequest
               application/json: 
-                schema: ""
           401: 
             body: 
               application/xml: 
                 schema: unauthorized
               application/json: 
-                schema: ""
       /{service_id}: 
         get: 
           description: Show VPN service details
@@ -3191,19 +2889,16 @@ resourceTypes:
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             403: 
               body: 
                 application/xml: 
                   schema: forbidden
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
         put: 
           description: Update VPN service
           body: 
@@ -3221,19 +2916,16 @@ resourceTypes:
                 application/xml: 
                   schema: badRequest
                 application/json: 
-                  schema: ""
             401: 
               body: 
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
         delete: 
           description: Remove VPN service
           responses: 
@@ -3243,19 +2935,16 @@ resourceTypes:
                 application/xml: 
                   schema: unauthorized
                 application/json: 
-                  schema: ""
             404: 
               body: 
                 application/xml: 
                   schema: itemNotFound
                 application/json: 
-                  schema: ""
             409: 
               body: 
                 application/xml: 
                   schema: conflict
                 application/json: 
-                  schema: ""
 documentation: 
   - title: Headline
     content: !include docs/netconnAPI/headline.md
